@@ -16,6 +16,9 @@ class Config {
   //falvors
   static Flavor? appFlavor;
 
+  // urls
+  static const BASE_URL = 'https://limitless-refuge-34453.herokuapp.com/';
+
   //datebase
   static Future<Database> get db => AppDatabase.instance.database;
   static const String DB_PASSWORD = "asdf23r423r0jd0";

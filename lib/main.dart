@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:cv_for_khamidjon/domain/providers/preferences_provider.dart';
+import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

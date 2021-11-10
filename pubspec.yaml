@@ -15,16 +15,19 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
   supercharged: ^2.1.1
-  connectivity_plus: ^2.0.2
   day_night_switcher: ^0.2.0+1
   google_fonts: ^2.1.0
   logger: ^1.1.0
-  shared_preferences: ^2.0.8
-
+  rxdart: ^0.26.0
   # path provider
   sembast: ^3.1.1
   path_provider: ^2.0.6
   path: ^1.8.0
+  shared_preferences: ^2.0.8
+
+  #network
+  dio: ^4.0.1
+  connectivity_plus: ^2.0.2
 
   equatable: ^2.0.3
   json_serializable: ^6.0.1

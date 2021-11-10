@@ -4,6 +4,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:crypto/crypto.dart';
+import 'package:cv_for_khamidjon/domain/providers/storage/aboutme_db_provider.dart';
 import 'package:encrypt/encrypt.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
@@ -41,7 +42,7 @@ class AppDatabase {
           version: Config.DB_VERSION,
           onVersionChanged: (database, oldVersion, newVersion) async {
             if (oldVersion < newVersion) {
-              // await GalleryDbProvider(database).clear();
+              await AboutMeDbProvider(database).clear();
               //
               // final accountProvider = AccountDbProvider(database);
               //

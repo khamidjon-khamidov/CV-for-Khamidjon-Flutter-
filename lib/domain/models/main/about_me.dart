@@ -32,6 +32,10 @@ class AboutMe implements Equatable {
     required this.cvLink,
   });
 
+  factory AboutMe.fromJson(Map<String, dynamic> json) => _$AboutMeFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AboutMeToJson(this);
+
   @override
   List<Object?> get props => [
         id,

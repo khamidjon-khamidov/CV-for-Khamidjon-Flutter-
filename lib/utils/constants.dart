@@ -9,4 +9,11 @@ abstract class AppConstants {
   static const String POSTS_TABLE = 'POSTS_TABLE';
   static const String PROJECTS_TABLE = 'PROJECTS_TABLE';
   static const String SKILLS_TABLE = 'SKILLS_TABLE';
+
+  // ******* URLs *******
+  static const GET_ABOUT_ME_PATH = 'someone/aboutme';
+  static const GET_ACHIEVEMENTS_PATH = 'someone/honors';
+  static const GET_PROJECTS_PATH = 'someone/projects';
+  static const GET_SKILLS_PATH = 'someone/skills';
+  static const GET_POSTS_PATH = 'someone/posts';
 }
