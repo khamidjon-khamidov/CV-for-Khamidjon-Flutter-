@@ -1,0 +1,14 @@
+{
+    "@@locale": "en",
+    "@counterAppBarTitle": {
+        "description": "Text shown in the AppBar of the Counter Page"
+    },
+    "counterAppBarTitle": "Counter",
+    "success": "Success",
+    "warning": "Warning!",
+    "some_error": "Some error!",
+    "function_in_development": "Function in development",
+    "your_internet_connection_was_restored": "Your internet connection was restored",
+    "connection_is_lost": "Connection is lost",
+    "please_check_your_internet_connection": "Please check your wifi or mobile network connection"
+}

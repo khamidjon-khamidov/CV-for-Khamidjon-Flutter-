@@ -1,0 +1,8 @@
+{
+    "@@locale": "ru",
+    "@counterAppBarTitle": {
+        "description": "Текст, отображаемый в панели приложений страницы счетчика"
+    },
+    "counterAppBarTitle": "Прилавок",
+    "success": "Успех"
+}

@@ -1,13 +1,8 @@
-// Copyright (c) 2021, Very Good Ventures
-// https://verygood.ventures
-//
-// Use of this source code is governed by an MIT-style
-// license that can be found in the LICENSE file or at
-// https://opensource.org/licenses/MIT.
+import 'package:cv_for_khamidjon/main.dart';
 
-import 'package:cv_for_khamidjon/app/app.dart';
-import 'package:cv_for_khamidjon/bootstrap.dart';
+import 'config.dart';
 
 void main() {
-  bootstrap(() => const App());
+  Config.appFlavor = Flavor.staging;
+  mainCommon();
 }
