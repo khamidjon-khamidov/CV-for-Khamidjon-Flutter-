@@ -1,4 +1,7 @@
 import 'package:flutter/foundation.dart';
+import 'package:sembast/sembast.dart';
+
+import 'base/database.dart';
 
 enum Flavor { production, development, staging }
 
@@ -12,6 +15,12 @@ class Config {
 
   //falvors
   static Flavor? appFlavor;
+
+  //datebase
+  static Future<Database> get db => AppDatabase.instance.database;
+  static const String DB_PASSWORD = "asdf23r423r0jd0";
+  static const String DB_NAME = 'MY_DATABASE.db';
+  static const int DB_VERSION = 5;
 
   static bool get showLogs {
     switch (buildType) {

@@ -5,6 +5,7 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+import 'package:cv_for_khamidjon/domain/providers/preferences_provider.dart';
 import 'package:cv_for_khamidjon/ui/screens/counter/counter.dart';
 import 'package:cv_for_khamidjon/ui/theme/themes.dart';
 import 'package:cv_for_khamidjon/ui/widgets/snackbar.dart';
@@ -47,7 +48,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       theme: AppThemes.lightTheme,
       darkTheme: AppThemes.darkTheme,
-      themeMode: ThemeMode.dark,
+      themeMode: PreferencesProvider.inMemoryDayNightMode,
       debugShowCheckedModeBanner: false,
       navigatorObservers: [
         AppNavigatorObserver(),
