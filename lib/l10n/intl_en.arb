@@ -13,5 +13,15 @@
     "please_check_your_internet_connection": "Please check your wifi or mobile network connection",
   "data_received_successfully": "Data Received Successfully",
     "data_got_from_storage_due_to_network_error": "Data got from storage due to Network Error",
-    "fetching_data_failed": "Fetching data failed!"
+    "fetching_data_failed": "Fetching data failed!",
+  "my_name": "Khamidjon Khamidov",
+  "page_home": "Home",
+  "page_about_me": "About Me",
+  "page_skills": "Skills",
+  "page_achievements": "Achievements",
+  "page_projects": "Projects",
+  "page_posts": "Posts",
+  "page_app_details": "App Details",
+  "more_options": "More Options",
+  "exit": "Exit"
 }

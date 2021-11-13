@@ -1,3 +1,6 @@
+import 'package:cv_for_khamidjon/base/logger.dart';
+import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
+import 'package:cv_for_khamidjon/generated/l10n.dart';
 import 'package:cv_for_khamidjon/routes.dart';
 import 'package:cv_for_khamidjon/ui/components/theme_mode_changer.dart';
 import 'package:cv_for_khamidjon/ui/theme/images.dart';
@@ -16,49 +19,49 @@ class AppDrawer extends StatelessWidget {
           _createDrawerItem(
             context: context,
             icon: Icons.contacts,
-            text: 'Home',
+            text: S.current.page_home,
             onTap: () => AppRouteSettings.goToHomePage(context),
           ),
           _createDrawerItem(
             context: context,
             icon: Icons.event,
-            text: 'About Me',
+            text: S.current.page_about_me,
             onTap: () => AppRouteSettings.goToAboutMePage(context),
           ),
           _createDrawerItem(
             context: context,
             icon: Icons.note,
-            text: 'Skills',
+            text: S.current.page_skills,
             onTap: () => AppRouteSettings.goToSkillsPage(context),
           ),
           _createDrawerItem(
             context: context,
             icon: Icons.collections_bookmark,
-            text: 'Achievements',
+            text: S.current.page_achievements,
             onTap: () => AppRouteSettings.goToAchievementsPage(context),
           ),
           _createDrawerItem(
             context: context,
             icon: Icons.face,
-            text: 'Projects',
+            text: S.current.page_projects,
             onTap: () => AppRouteSettings.goToProjectsPage(context),
           ),
           _createDrawerItem(
             context: context,
             icon: Icons.account_box,
-            text: 'Posts',
+            text: S.current.page_posts,
             onTap: () => AppRouteSettings.goToPostsPage(context),
           ),
           _createDrawerItem(
               context: context,
               icon: Icons.stars,
-              text: 'App Details',
+              text: S.current.page_app_details,
               onTap: () => AppRouteSettings.goToAppDetailsPage(context)),
           Divider(),
           Padding(
             padding: const EdgeInsets.only(left: 18),
             child: Text(
-              'More Options',
+              S.current.more_options,
               style: TextStyle(
                   color: Theme.of(context).textTheme.headline4?.color ??
                       Theme.of(context).primaryColor),
@@ -67,7 +70,7 @@ class AppDrawer extends StatelessWidget {
           _createDrawerItem(
             context: context,
             icon: Icons.bug_report,
-            text: 'Exit',
+            text: S.current.exit,
           ),
         ],
       ),
@@ -99,7 +102,7 @@ class AppDrawer extends StatelessWidget {
               ),
               Spacer(flex: 1),
               Text(
-                "Khamidjon Khamidov",
+                S.current.my_name,
                 style: TextStyle(
                     color: Theme.of(context).colorScheme.secondary,
                     fontSize: 20.0,
@@ -114,6 +117,21 @@ class AppDrawer extends StatelessWidget {
               Column(
                 children: [
                   ThemeModeChanger(),
+                  DropdownButton<String>(
+                    value: PreferencesProvider.inMemoryLocale.countryCode?.toUpperCase() ?? 'EN',
+                    elevation: 16,
+                    style: Theme.of(context).textTheme.subtitle1,
+                    underline: SizedBox(),
+                    onChanged: (String? data) {},
+                    items:
+                        S.delegate.supportedLocales.map<DropdownMenuItem<String>>((Locale value) {
+                      simpleLogger.d('Got locale: ${value.languageCode}');
+                      return DropdownMenuItem<String>(
+                        value: value.languageCode.toUpperCase(),
+                        child: Text(value.languageCode.toUpperCase()),
+                      );
+                    }).toList(),
+                  ),
                 ],
               ),
             ],

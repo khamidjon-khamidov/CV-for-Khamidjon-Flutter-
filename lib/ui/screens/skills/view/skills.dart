@@ -1,3 +1,4 @@
+import 'package:cv_for_khamidjon/generated/l10n.dart';
 import 'package:cv_for_khamidjon/ui/components/app_drawer.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class SkillsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Skills'),
+        title: Text(S.current.page_skills),
       ),
       drawer: AppDrawer(),
       body: Container(),

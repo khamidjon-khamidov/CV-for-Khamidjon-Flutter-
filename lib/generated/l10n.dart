@@ -159,6 +159,106 @@ class S {
       args: [],
     );
   }
+
+  /// `Khamidjon Khamidov`
+  String get my_name {
+    return Intl.message(
+      'Khamidjon Khamidov',
+      name: 'my_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get page_home {
+    return Intl.message(
+      'Home',
+      name: 'page_home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `About Me`
+  String get page_about_me {
+    return Intl.message(
+      'About Me',
+      name: 'page_about_me',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skills`
+  String get page_skills {
+    return Intl.message(
+      'Skills',
+      name: 'page_skills',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Achievements`
+  String get page_achievements {
+    return Intl.message(
+      'Achievements',
+      name: 'page_achievements',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Projects`
+  String get page_projects {
+    return Intl.message(
+      'Projects',
+      name: 'page_projects',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Posts`
+  String get page_posts {
+    return Intl.message(
+      'Posts',
+      name: 'page_posts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `App Details`
+  String get page_app_details {
+    return Intl.message(
+      'App Details',
+      name: 'page_app_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More Options`
+  String get more_options {
+    return Intl.message(
+      'More Options',
+      name: 'more_options',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Exit`
+  String get exit {
+    return Intl.message(
+      'Exit',
+      name: 'exit',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -168,6 +268,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ru'),
+      Locale.fromSubtags(languageCode: 'uz'),
     ];
   }
 

@@ -29,7 +29,7 @@ class _AboutMeViewState extends State<AboutMeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('About Me'),
+        title: Text(S.current.page_about_me),
       ),
       drawer: AppDrawer(),
       body: BlocBuilder<AboutMeBloc, AboutMeState>(
