@@ -3,7 +3,7 @@ import 'package:cv_for_khamidjon/ui/theme/colors.dart';
 import 'package:cv_for_khamidjon/ui/theme/text_styles.dart';
 import 'package:flutter/material.dart';
 
-enum AppSnackBarGrade { success, warning, error }
+enum AppSnackBarGrade { success, warning, error, info }
 
 extension AppSnackBarGradeExt on AppSnackBarGrade {
   Color get color {
@@ -11,6 +11,8 @@ extension AppSnackBarGradeExt on AppSnackBarGrade {
       return AppColors.greenSuccess;
     else if (this == AppSnackBarGrade.warning)
       return AppColors.yellowWarning;
+    else if (this == AppSnackBarGrade.info)
+      return AppColors.colorPrimaryDark;
     else
       return AppColors.red;
   }
@@ -103,6 +105,21 @@ class AppSnackBar extends SnackBar {
           description: description,
           grade: AppSnackBarGrade.error,
           iconData: iconData ?? Icons.error,
+        ),
+      );
+
+  static void showInfo(
+    ScaffoldMessengerState scaffoldMessenger, {
+    required String title,
+    String? description,
+    IconData? iconData,
+  }) =>
+      scaffoldMessenger.showSnackBar(
+        AppSnackBar(
+          title: title,
+          description: description,
+          grade: AppSnackBarGrade.info,
+          iconData: iconData ?? Icons.info,
         ),
       );
 

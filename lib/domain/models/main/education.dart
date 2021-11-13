@@ -3,7 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'education.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class Education implements Equatable {
   @JsonKey(name: 'name')
   final String name;

@@ -10,5 +10,8 @@
     "function_in_development": "Function in development",
     "your_internet_connection_was_restored": "Your internet connection was restored",
     "connection_is_lost": "Connection is lost",
-    "please_check_your_internet_connection": "Please check your wifi or mobile network connection"
+    "please_check_your_internet_connection": "Please check your wifi or mobile network connection",
+  "data_received_successfully": "Data Received Successfully",
+    "data_got_from_storage_due_to_network_error": "Data got from storage due to Network Error",
+    "fetching_data_failed": "Fetching data failed!"
 }

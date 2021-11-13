@@ -129,6 +129,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Data Received Successfully`
+  String get data_received_successfully {
+    return Intl.message(
+      'Data Received Successfully',
+      name: 'data_received_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Data got from storage due to Network Error`
+  String get data_got_from_storage_due_to_network_error {
+    return Intl.message(
+      'Data got from storage due to Network Error',
+      name: 'data_got_from_storage_due_to_network_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fetching data failed!`
+  String get fetching_data_failed {
+    return Intl.message(
+      'Fetching data failed!',
+      name: 'fetching_data_failed',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

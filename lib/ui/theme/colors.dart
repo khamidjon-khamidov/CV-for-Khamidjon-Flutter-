@@ -23,7 +23,7 @@ class AppColors {
 
   // *****************  DARK MODE ********************
   static Color colorAppBar = const Color(0xff1F1F1F);
-  static Color colorPrimaryDark = const Color(0xffBB86FC);
+  static Color colorPrimaryDark = const Color(0xff1F1F1F);
   static Color colorSecondaryDark = const Color(0xff03DAC5);
   static Color colorAccentDark = const Color(0xffBB86FC);
   static Color screenBackgroundDark = const Color(0xff121212);

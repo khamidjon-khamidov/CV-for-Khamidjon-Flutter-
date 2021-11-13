@@ -6,11 +6,12 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
-import 'package:cv_for_khamidjon/ui/screens/counter/counter.dart';
+import 'package:cv_for_khamidjon/ui/screens/counter/about_me.dart';
 import 'package:cv_for_khamidjon/ui/theme/themes.dart';
 import 'package:cv_for_khamidjon/ui/widgets/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'base/connection_observer.dart';
 import 'base/navigator_observer.dart';
@@ -55,12 +56,13 @@ class App extends StatelessWidget {
       ],
       localizationsDelegates: const [
         S.delegate,
+        RefreshLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      home: const CounterPage(),
+      home: const AboutMePage(),
     );
   }
 }

@@ -15,10 +15,12 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
   supercharged: ^2.1.1
-  day_night_switcher: ^0.2.0+1
   google_fonts: ^2.1.0
   logger: ^1.1.0
-  rxdart: ^0.26.0
+  rxdart: ^0.27.2
+  bloc_concurrency: ^0.1.0
+  pull_to_refresh: ^2.0.0
+
   # path provider
   sembast: ^3.1.1
   path_provider: ^2.0.6

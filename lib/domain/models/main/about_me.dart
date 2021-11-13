@@ -5,7 +5,7 @@ import 'education.dart';
 
 part 'about_me.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class AboutMe implements Equatable {
   @JsonKey(name: '_id')
   final String id;

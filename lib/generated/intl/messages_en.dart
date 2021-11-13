@@ -8,6 +8,7 @@
 // ignore_for_file:prefer_single_quotes,comment_references, directives_ordering
 // ignore_for_file:annotate_overrides,prefer_generic_function_type_aliases
 // ignore_for_file:unused_import, file_names, avoid_escaping_inner_quotes
+// ignore_for_file:unnecessary_string_interpolations, unnecessary_string_escapes
 
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
@@ -24,6 +25,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "connection_is_lost":
             MessageLookupByLibrary.simpleMessage("Connection is lost"),
         "counterAppBarTitle": MessageLookupByLibrary.simpleMessage("Counter"),
+        "data_got_from_storage_due_to_network_error":
+            MessageLookupByLibrary.simpleMessage(
+                "Data got from storage due to Network Error"),
+        "data_received_successfully":
+            MessageLookupByLibrary.simpleMessage("Data Received Successfully"),
+        "fetching_data_failed":
+            MessageLookupByLibrary.simpleMessage("Fetching data failed!"),
         "function_in_development":
             MessageLookupByLibrary.simpleMessage("Function in development"),
         "please_check_your_internet_connection":
