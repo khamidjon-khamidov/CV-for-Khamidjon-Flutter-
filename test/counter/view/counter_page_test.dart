@@ -6,7 +6,7 @@
 // // https://opensource.org/licenses/MIT.
 //
 // import 'package:bloc_test/bloc_test.dart';
-// import 'package:cv_for_khamidjon/ui/screens/counter/about_me.dart';
+// import 'package:cv_for_khamidjon/ui/screens/about_me/about_me.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_test/flutter_test.dart';
