@@ -22,7 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "counterAppBarTitle": MessageLookupByLibrary.simpleMessage("Прилавок"),
         "success": MessageLookupByLibrary.simpleMessage("Успех")
       };
 }

@@ -1,10 +1,11 @@
-import 'package:cv_for_khamidjon/base/logger.dart';
 import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
 import 'package:cv_for_khamidjon/generated/l10n.dart';
 import 'package:cv_for_khamidjon/routes.dart';
 import 'package:cv_for_khamidjon/ui/components/theme_mode_changer.dart';
 import 'package:cv_for_khamidjon/ui/theme/images.dart';
+import 'package:cv_for_khamidjon/utils/app_settings_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/src/provider.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
@@ -118,14 +119,19 @@ class AppDrawer extends StatelessWidget {
                 children: [
                   ThemeModeChanger(),
                   DropdownButton<String>(
-                    value: PreferencesProvider.inMemoryLocale.countryCode?.toUpperCase() ?? 'EN',
+                    value: PreferencesProvider.inMemoryLocale.languageCode.toUpperCase(),
                     elevation: 16,
                     style: Theme.of(context).textTheme.subtitle1,
                     underline: SizedBox(),
-                    onChanged: (String? data) {},
+                    onChanged: (String? data) {
+                      if (data != null) {
+                        context
+                            .read<AppSettingsCubit>()
+                            .changeLanguage(Locale.fromSubtags(languageCode: data.toLowerCase()));
+                      }
+                    },
                     items:
                         S.delegate.supportedLocales.map<DropdownMenuItem<String>>((Locale value) {
-                      simpleLogger.d('Got locale: ${value.languageCode}');
                       return DropdownMenuItem<String>(
                         value: value.languageCode.toUpperCase(),
                         child: Text(value.languageCode.toUpperCase()),

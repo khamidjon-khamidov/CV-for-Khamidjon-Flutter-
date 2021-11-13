@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
 import 'package:cv_for_khamidjon/utils/app_level_variables.dart';
-import 'package:cv_for_khamidjon/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class AppSettingsCubit extends Cubit<AppSettings> {
@@ -12,14 +11,12 @@ class AppSettingsCubit extends Cubit<AppSettings> {
         ));
 
   void changeLanguage(Locale locale) async {
-    if (AppConstants.SUPPORTED_LOCALES.contains(locale)) {
-      AppLevelVariables.currentLocale = locale;
-      await PreferencesProvider.setLanguage(locale);
-      emit(AppSettings(
-        themeMode: PreferencesProvider.inMemoryDayNightMode,
-        language: PreferencesProvider.inMemoryLocale,
-      ));
-    }
+    AppLevelVariables.currentLocale = locale;
+    await PreferencesProvider.setLanguage(locale);
+    emit(AppSettings(
+      themeMode: PreferencesProvider.inMemoryDayNightMode,
+      language: PreferencesProvider.inMemoryLocale,
+    ));
   }
 
   void changeThemeMode(ThemeMode themeMode) async {

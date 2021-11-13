@@ -24,7 +24,6 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "connection_is_lost":
             MessageLookupByLibrary.simpleMessage("Connection is lost"),
-        "counterAppBarTitle": MessageLookupByLibrary.simpleMessage("Counter"),
         "data_got_from_storage_due_to_network_error":
             MessageLookupByLibrary.simpleMessage(
                 "Data got from storage due to Network Error"),

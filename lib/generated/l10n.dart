@@ -50,16 +50,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Counter`
-  String get counterAppBarTitle {
-    return Intl.message(
-      'Counter',
-      name: 'counterAppBarTitle',
-      desc: 'Text shown in the AppBar of the Counter Page',
-      args: [],
-    );
-  }
-
   /// `Success`
   String get success {
     return Intl.message(

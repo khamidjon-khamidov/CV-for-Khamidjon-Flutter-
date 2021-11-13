@@ -1,1 +1,23 @@
-{}
+{
+  "@@locale": "uz",
+  "success": "Muvaffaqiyat",
+  "warning": "Ogohlantirish!",
+  "some_error": "Qandaydir xatolik sodir bo'ldi!",
+  "function_in_development": "Bu funksiya hali mavjud emas",
+  "your_internet_connection_was_restored": "Internet aloqangiz tiklandi.",
+  "connection_is_lost": "Aloqa yo'qoldi",
+  "please_check_your_internet_connection": "Iltimos aloqangizni tekshiring",
+  "data_received_successfully": "Ma'lumot muvaffaqiyatli yuklandi",
+  "data_got_from_storage_due_to_network_error": "Ma'lumot internet yo'qligi tufayli qurilmadan olindi",
+  "fetching_data_failed": "Malumotni olishda xatolik sodir bo'ldi",
+  "my_name": "Xamidjon Xamidov",
+  "page_home": "Asosiy",
+  "page_about_me": "Men Haqimda",
+  "page_skills": "Bilimlar",
+  "page_achievements": "Muvaffaqiyatlar",
+  "page_projects": "Loyihalar",
+  "page_posts": "Postlar",
+  "page_app_details": "Ilova Haqida",
+  "more_options": "Boshqalar",
+  "exit": "Chiqish"
+}
