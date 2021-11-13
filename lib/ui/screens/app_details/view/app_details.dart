@@ -1,10 +1,17 @@
+import 'package:cv_for_khamidjon/ui/components/app_drawer.dart';
 import 'package:flutter/material.dart';
 
-class AppDetails extends StatelessWidget {
-  const AppDetails({Key? key}) : super(key: key);
+class AppDetailsPage extends StatelessWidget {
+  const AppDetailsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('App Details'),
+      ),
+      drawer: AppDrawer(),
+      body: Container(),
+    );
   }
 }

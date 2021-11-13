@@ -13,13 +13,15 @@ class AppThemes {
         colorScheme: ColorScheme.fromSwatch(
           accentColor: AppColors.colorAccentDark,
         ),
+        canvasColor: AppColors.screenBackgroundDark,
+        dividerColor: AppColors.disabledTextDark,
         primaryColor: AppColors.colorPrimaryDark,
         scaffoldBackgroundColor: AppColors.screenBackgroundDark,
         textTheme: TextTheme(
           headline1: TextStyle(color: AppColors.highEmphasisTextDark),
           headline2: TextStyle(color: AppColors.highEmphasisTextDark),
           headline3: TextStyle(color: AppColors.highEmphasisTextDark),
-          headline4: TextStyle(color: AppColors.highEmphasisTextDark),
+          headline4: TextStyle(color: AppColors.disabledTextDark),
           headline5: TextStyle(color: AppColors.highEmphasisTextDark),
           headline6: TextStyle(color: AppColors.highEmphasisTextDark),
           subtitle1: TextStyle(color: AppColors.highEmphasisTextDark),

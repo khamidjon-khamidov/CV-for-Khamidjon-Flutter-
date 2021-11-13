@@ -5,6 +5,7 @@ import 'package:cv_for_khamidjon/base/logger.dart';
 import 'package:cv_for_khamidjon/domain/models/bloc_response.dart';
 import 'package:cv_for_khamidjon/domain/models/main/about_me.dart';
 import 'package:cv_for_khamidjon/domain/repositories/main_repository.dart';
+import 'package:cv_for_khamidjon/ui/components/app_drawer.dart';
 import 'package:cv_for_khamidjon/ui/screens/main/about_me/bloc/about_me_event.dart';
 import 'package:cv_for_khamidjon/ui/screens/main/about_me/bloc/about_me_state.dart';
 import 'package:cv_for_khamidjon/ui/widgets/snackbar.dart';

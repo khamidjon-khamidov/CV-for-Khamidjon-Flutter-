@@ -1,3 +1,6 @@
+import 'package:cv_for_khamidjon/routes.dart';
+import 'package:cv_for_khamidjon/ui/theme/images.dart';
+import 'package:cv_for_khamidjon/utils/app_level_variables.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -9,59 +12,127 @@ class AppDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          _createHeader(),
+          _createHeader(context),
           _createDrawerItem(
+            context: context,
             icon: Icons.contacts,
-            text: 'Contacts',
+            text: 'Home',
+            onTap: () => AppRouteSettings.goToHomePage(context),
           ),
           _createDrawerItem(
+            context: context,
             icon: Icons.event,
-            text: 'Events',
+            text: 'About Me',
+            onTap: () => AppRouteSettings.goToAboutMePage(context),
           ),
           _createDrawerItem(
+            context: context,
             icon: Icons.note,
-            text: 'Notes',
+            text: 'Skills',
+            onTap: () => AppRouteSettings.goToSkillsPage(context),
           ),
+          _createDrawerItem(
+            context: context,
+            icon: Icons.collections_bookmark,
+            text: 'Achievements',
+            onTap: () => AppRouteSettings.goToAchievementsPage(context),
+          ),
+          _createDrawerItem(
+            context: context,
+            icon: Icons.face,
+            text: 'Projects',
+            onTap: () => AppRouteSettings.goToProjectsPage(context),
+          ),
+          _createDrawerItem(
+            context: context,
+            icon: Icons.account_box,
+            text: 'Posts',
+            onTap: () => AppRouteSettings.goToPostsPage(context),
+          ),
+          _createDrawerItem(
+              context: context,
+              icon: Icons.stars,
+              text: 'App Details',
+              onTap: () => AppRouteSettings.goToAppDetailsPage(context)),
           Divider(),
-          _createDrawerItem(icon: Icons.collections_bookmark, text: 'Steps'),
-          _createDrawerItem(icon: Icons.face, text: 'Authors'),
-          _createDrawerItem(icon: Icons.account_box, text: 'Flutter Documentation'),
-          _createDrawerItem(icon: Icons.stars, text: 'Useful Links'),
-          Divider(),
-          _createDrawerItem(icon: Icons.bug_report, text: 'Report an issue'),
-          ListTile(
-            title: Text('0.0.1'),
-            onTap: () {},
+          Padding(
+            padding: const EdgeInsets.only(left: 18),
+            child: Text(
+              'More Options',
+              style: TextStyle(
+                  color: Theme.of(context).textTheme.headline4?.color ??
+                      Theme.of(context).primaryColor),
+            ),
+          ),
+          _createDrawerItem(
+            context: context,
+            icon: Icons.bug_report,
+            text: 'Exit',
           ),
         ],
       ),
     );
   }
 
-  Widget _createHeader() {
+  Widget _createHeader(BuildContext context) {
     return DrawerHeader(
       margin: EdgeInsets.zero,
       padding: EdgeInsets.zero,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          fit: BoxFit.fill,
-          image: AssetImage('path/to/header_background.png'),
-        ),
-      ),
+      decoration: BoxDecoration(color: Theme.of(context).appBarTheme.backgroundColor),
       child: Stack(
-        children: <Widget>[
-          Positioned(
-              bottom: 12.0,
-              left: 16.0,
-              child: Text("Flutter Step-by-Step",
-                  style:
-                      TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w500))),
+        fit: StackFit.expand,
+        children: [
+          Column(
+            children: <Widget>[
+              Spacer(flex: 1),
+              Container(
+                padding: EdgeInsets.all(2),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                child: CircleAvatar(
+                  radius: 50,
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                  backgroundImage: AssetImage(AppImages.myPicture3x4),
+                ),
+              ),
+              Spacer(flex: 1),
+              Text(
+                "Khamidjon Khamidov",
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.secondary,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.w500),
+              ),
+              Spacer(flex: 1),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(child: Container()),
+              Column(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      AppLevelVariables.currentThemeMode == ThemeMode.dark
+                          ? Icons.nights_stay
+                          : Icons.wb_sunny,
+                      color: Theme.of(context).textTheme.headline1?.color ?? Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          )
         ],
       ),
     );
   }
 
   Widget _createDrawerItem({
+    required BuildContext context,
     required IconData icon,
     required String text,
     GestureTapCallback? onTap,
@@ -69,10 +140,16 @@ class AppDrawer extends StatelessWidget {
     return ListTile(
       title: Row(
         children: <Widget>[
-          Icon(icon),
+          Icon(
+            icon,
+            color: Theme.of(context).colorScheme.secondary,
+          ),
           Padding(
             padding: EdgeInsets.only(left: 8.0),
-            child: Text(text),
+            child: Text(
+              text,
+              style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+            ),
           )
         ],
       ),

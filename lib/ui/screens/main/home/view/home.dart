@@ -1,10 +1,17 @@
+import 'package:cv_for_khamidjon/ui/components/app_drawer.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Home'),
+      ),
+      drawer: AppDrawer(),
+      body: Container(),
+    );
   }
 }

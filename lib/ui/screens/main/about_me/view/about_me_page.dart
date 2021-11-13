@@ -29,8 +29,9 @@ class _AboutMeViewState extends State<AboutMeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('CV for Khamidjon'),
+        title: Text('About Me'),
       ),
+      drawer: AppDrawer(),
       body: BlocBuilder<AboutMeBloc, AboutMeState>(
         buildWhen: (previous, current) {
           simpleLogger.d('Khamidjon: got state: $current');

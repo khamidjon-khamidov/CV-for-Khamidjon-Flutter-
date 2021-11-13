@@ -6,7 +6,7 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
-import 'package:cv_for_khamidjon/ui/screens/main/about_me/about_me.dart';
+import 'package:cv_for_khamidjon/ui/screens/main/home/view/home.dart';
 import 'package:cv_for_khamidjon/ui/theme/themes.dart';
 import 'package:cv_for_khamidjon/ui/widgets/snackbar.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +47,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: AppThemes.lightTheme,
+      theme: AppThemes.darkTheme,
       darkTheme: AppThemes.darkTheme,
       themeMode: PreferencesProvider.inMemoryDayNightMode,
       debugShowCheckedModeBanner: false,
@@ -62,7 +62,7 @@ class App extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      home: const AboutMePage(),
+      home: const HomePage(),
     );
   }
 }
