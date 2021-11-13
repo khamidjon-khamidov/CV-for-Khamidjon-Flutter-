@@ -5,11 +5,12 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
-import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
 import 'package:cv_for_khamidjon/ui/components/snackbar.dart';
 import 'package:cv_for_khamidjon/ui/screens/main/home/view/home.dart';
 import 'package:cv_for_khamidjon/ui/theme/themes.dart';
+import 'package:cv_for_khamidjon/utils/app_settings_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -46,23 +47,29 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: AppThemes.darkTheme,
-      darkTheme: AppThemes.darkTheme,
-      themeMode: PreferencesProvider.inMemoryDayNightMode,
-      debugShowCheckedModeBanner: false,
-      navigatorObservers: [
-        AppNavigatorObserver(),
-      ],
-      localizationsDelegates: const [
-        S.delegate,
-        RefreshLocalizations.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
-      home: const HomePage(),
+    return BlocProvider(
+      create: (context) => AppSettingsCubit(),
+      child: BlocBuilder<AppSettingsCubit, AppSettings>(builder: (context, settings) {
+        return MaterialApp(
+          theme: AppThemes.lightTheme,
+          darkTheme: AppThemes.darkTheme,
+          themeMode: settings.themeMode,
+          debugShowCheckedModeBanner: false,
+          navigatorObservers: [
+            AppNavigatorObserver(),
+          ],
+          locale: settings.language,
+          localizationsDelegates: const [
+            S.delegate,
+            RefreshLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          home: const HomePage(),
+        );
+      }),
     );
   }
 }

@@ -1,6 +1,8 @@
-import 'package:cv_for_khamidjon/utils/app_level_variables.dart';
+import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
+import 'package:cv_for_khamidjon/utils/app_settings_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/src/provider.dart';
 
 class ThemeModeChanger extends StatefulWidget {
   @override
@@ -33,19 +35,16 @@ class _ThemeModeChangerState extends State<ThemeModeChanger> with SingleTickerPr
         child: IconButton(
           onPressed: () {
             _controller.forward().whenComplete(() {
-              // todo
-              AppLevelVariables.currentThemeMode =
-                  AppLevelVariables.currentThemeMode == ThemeMode.dark
-                      ? ThemeMode.light
-                      : ThemeMode.dark;
-              setState(() {
-                
-              });
+              context.read<AppSettingsCubit>().changeThemeMode(
+                  PreferencesProvider.inMemoryDayNightMode == ThemeMode.light
+                      ? ThemeMode.dark
+                      : ThemeMode.light);
+
               _controller.reset();
             });
           },
           icon: Icon(
-            AppLevelVariables.currentThemeMode == ThemeMode.dark
+            PreferencesProvider.inMemoryDayNightMode == ThemeMode.dark
                 ? Icons.nights_stay
                 : Icons.wb_sunny,
             color: Theme.of(context).textTheme.headline1?.color ??

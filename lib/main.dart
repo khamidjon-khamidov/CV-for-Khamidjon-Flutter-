@@ -5,6 +5,8 @@ import 'package:cv_for_khamidjon/base/dio_builder.dart';
 import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
 import 'package:cv_for_khamidjon/domain/repositories/main_repository.dart';
 import 'package:cv_for_khamidjon/ui/screens/main/about_me/about_me.dart';
+import 'package:cv_for_khamidjon/utils/app_level_variables.dart';
+import 'package:cv_for_khamidjon/utils/app_settings_cubit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,7 +24,12 @@ void mainCommon() async {
   await PreferencesProvider.loadLanToMemoryAndReturn();
   await PreferencesProvider.loadDayNightModeToMemoryAndReturn();
 
+  // load database
   Database appDatabase = await AppDatabase.instance.database;
+
+  // load current settings
+  AppLevelVariables.currentThemeMode = PreferencesProvider.inMemoryDayNightMode;
+  AppLevelVariables.currentLocale = PreferencesProvider.inMemoryLocale;
 
   await runZonedGuarded(
     () async => runApp(
@@ -39,6 +46,9 @@ void mainCommon() async {
           providers: [
             BlocProvider<AboutMeBloc>(
               create: (context) => AboutMeBloc(context.read<MainRepository>()),
+            ),
+            BlocProvider<AppSettingsCubit>(
+              create: (context) => AppSettingsCubit(),
             )
           ],
           child: App(),

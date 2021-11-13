@@ -18,5 +18,5 @@ abstract class AppConstants {
   static const GET_POSTS_PATH = 'someone/posts';
 
   // ******* Supported Languages *****
-  static const SUPPORTED_LANGUAGES = ['en', 'ru', 'uz'];
+  static const SUPPORTED_LOCALES = ['en', 'ru', 'uz'];
 }

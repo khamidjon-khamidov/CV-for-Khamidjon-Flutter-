@@ -3,20 +3,21 @@ import 'package:cv_for_khamidjon/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 abstract class PreferencesProvider {
-  static String? _inMemoryLanguage;
+  static Locale _inMemoryLocale = Locale.fromSubtags(languageCode: 'en');
   static ThemeMode _inMemoryDayNightMode = ThemeMode.system;
 
-  static String? get inMemoryLanguage => _inMemoryLanguage;
+  static Locale get inMemoryLocale => _inMemoryLocale;
   static ThemeMode get inMemoryDayNightMode => _inMemoryDayNightMode;
 
-  static Future<String?> loadLanToMemoryAndReturn() async {
-    _inMemoryLanguage = await PreferencesHelper.getString(AppConstants.LANGUAGE_KEY);
-    return inMemoryLanguage;
+  static Future<Locale> loadLanToMemoryAndReturn() async {
+    _inMemoryLocale = Locale.fromSubtags(
+        languageCode: await PreferencesHelper.getString(AppConstants.LANGUAGE_KEY) ?? 'en');
+    return inMemoryLocale;
   }
 
-  static Future<void> setLanguage(String? language) async {
-    _inMemoryLanguage = language;
-    if (language != null) await PreferencesHelper.setString(AppConstants.LANGUAGE_KEY, language);
+  static Future<void> setLanguage(Locale locale) async {
+    _inMemoryLocale = locale;
+    await PreferencesHelper.setString(AppConstants.LANGUAGE_KEY, locale.languageCode);
   }
 
   static Future<ThemeMode> loadDayNightModeToMemoryAndReturn() async {
@@ -24,13 +25,13 @@ abstract class PreferencesProvider {
     _inMemoryDayNightMode = mode == true
         ? ThemeMode.light
         : mode == false
-            ? ThemeMode.light
+            ? ThemeMode.dark
             : ThemeMode.system;
     return inMemoryDayNightMode;
   }
 
   static Future<void> setDayNightMode(bool isDay) async {
     _inMemoryDayNightMode = isDay ? ThemeMode.light : ThemeMode.dark;
-    await PreferencesHelper.setBool(AppConstants.LANGUAGE_KEY, isDay);
+    await PreferencesHelper.setBool(AppConstants.DAY_NIGHT_MODE_KEY, isDay);
   }
 }
