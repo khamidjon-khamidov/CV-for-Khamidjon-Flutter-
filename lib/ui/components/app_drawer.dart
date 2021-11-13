@@ -1,6 +1,6 @@
 import 'package:cv_for_khamidjon/routes.dart';
 import 'package:cv_for_khamidjon/ui/theme/images.dart';
-import 'package:cv_for_khamidjon/utils/app_level_variables.dart';
+import 'package:cv_for_khamidjon/ui/widgets/theme_mode_changer.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -113,15 +113,7 @@ class AppDrawer extends StatelessWidget {
               Expanded(child: Container()),
               Column(
                 children: [
-                  IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      AppLevelVariables.currentThemeMode == ThemeMode.dark
-                          ? Icons.nights_stay
-                          : Icons.wb_sunny,
-                      color: Theme.of(context).textTheme.headline1?.color ?? Colors.white,
-                    ),
-                  ),
+                  ThemeModeChanger(),
                 ],
               ),
             ],
