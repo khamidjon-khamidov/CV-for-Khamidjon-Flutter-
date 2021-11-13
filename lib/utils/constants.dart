@@ -16,4 +16,7 @@ abstract class AppConstants {
   static const GET_PROJECTS_PATH = 'someone/projects';
   static const GET_SKILLS_PATH = 'someone/skills';
   static const GET_POSTS_PATH = 'someone/posts';
+
+  // ******* Supported Languages *****
+  static const SUPPORTED_LANGUAGES = ['en', 'ru', 'uz'];
 }

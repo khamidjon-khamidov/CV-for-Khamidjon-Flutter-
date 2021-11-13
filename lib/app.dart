@@ -6,9 +6,9 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
+import 'package:cv_for_khamidjon/ui/components/snackbar.dart';
 import 'package:cv_for_khamidjon/ui/screens/main/home/view/home.dart';
 import 'package:cv_for_khamidjon/ui/theme/themes.dart';
-import 'package:cv_for_khamidjon/ui/widgets/snackbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';

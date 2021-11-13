@@ -38,7 +38,9 @@ class _ThemeModeChangerState extends State<ThemeModeChanger> with SingleTickerPr
                   AppLevelVariables.currentThemeMode == ThemeMode.dark
                       ? ThemeMode.light
                       : ThemeMode.dark;
-
+              setState(() {
+                
+              });
               _controller.reset();
             });
           },

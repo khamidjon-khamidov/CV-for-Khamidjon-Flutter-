@@ -1,4 +1,4 @@
-import 'package:cv_for_khamidjon/ui/components/app_drawer.dart';
+import 'package:cv_for_khamidjon/ui/screens/app_drawer/view/app_drawer.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

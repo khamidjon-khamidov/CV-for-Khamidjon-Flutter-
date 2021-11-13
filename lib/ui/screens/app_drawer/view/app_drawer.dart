@@ -1,6 +1,6 @@
 import 'package:cv_for_khamidjon/routes.dart';
+import 'package:cv_for_khamidjon/ui/components/theme_mode_changer.dart';
 import 'package:cv_for_khamidjon/ui/theme/images.dart';
-import 'package:cv_for_khamidjon/ui/widgets/theme_mode_changer.dart';
 import 'package:flutter/material.dart';
 
 class AppDrawer extends StatelessWidget {
