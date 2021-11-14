@@ -23,3 +23,5 @@ part 'bloc/home_pages_state.dart';
 part 'view/about_me_page.dart';
 part 'view/home.dart';
 part 'view/widgets/experience.dart';
+part 'view/widgets/home_image_experience.dart';
+part 'view/widgets/home_top_title.dart';
