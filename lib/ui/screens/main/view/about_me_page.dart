@@ -17,7 +17,6 @@ class AboutMeView extends StatefulWidget {
 }
 
 class _AboutMeViewState extends State<AboutMeView> {
-  bool isDarkModeEnabled = false;
   RefreshController _refreshController = RefreshController(initialRefresh: false);
 
   void _onRefresh() async {

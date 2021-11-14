@@ -12,6 +12,7 @@ class AppThemes {
         appBarTheme: AppBarTheme(color: AppColors.colorAppBar),
         colorScheme: ColorScheme.fromSwatch(
           accentColor: AppColors.colorAccentDark,
+          errorColor: AppColors.errorColorDark,
         ),
         canvasColor: AppColors.screenBackgroundDark,
         dividerColor: AppColors.disabledTextDark,
@@ -22,7 +23,7 @@ class AppThemes {
           headline2: TextStyle(color: AppColors.highEmphasisTextDark),
           headline3: TextStyle(color: AppColors.highEmphasisTextDark),
           headline4: TextStyle(color: AppColors.disabledTextDark),
-          headline5: TextStyle(color: AppColors.highEmphasisTextDark),
+          headline5: TextStyle(color: AppColors.mediumEmphasisTextDark),
           headline6: TextStyle(color: AppColors.highEmphasisTextDark),
           subtitle1: TextStyle(color: AppColors.highEmphasisTextDark),
           subtitle2: TextStyle(color: AppColors.highEmphasisTextDark),

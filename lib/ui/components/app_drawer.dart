@@ -11,8 +11,8 @@ import 'package:provider/src/provider.dart';
 
 class AppDrawer extends StatelessWidget {
   AppDrawer({Key? key}) : super(key: key);
-  late final Color menuIconColor;
-  late final Color menuNameColor;
+  Color? menuIconColor;
+  Color? menuNameColor;
   @override
   Widget build(BuildContext context) {
     menuIconColor = Theme.of(context).primaryColor;
@@ -86,7 +86,7 @@ class AppDrawer extends StatelessWidget {
 
   Widget _createMenuImage(BuildContext context, String source) {
     return ColorFiltered(
-      colorFilter: ColorFilter.mode(menuIconColor, BlendMode.srcATop),
+      colorFilter: ColorFilter.mode(menuIconColor!, BlendMode.srcATop),
       child: Image.asset(
         source,
         height: 20,

@@ -1,12 +1,5 @@
-// Copyright (c) 2021, Very Good Ventures
-// https://verygood.ventures
-//
-// Use of this source code is governed by an MIT-style
-// license that can be found in the LICENSE file or at
-// https://opensource.org/licenses/MIT.
-
 import 'package:cv_for_khamidjon/ui/components/snackbar.dart';
-import 'package:cv_for_khamidjon/ui/screens/main/view/home.dart';
+import 'package:cv_for_khamidjon/ui/screens/main/home_pages.dart';
 import 'package:cv_for_khamidjon/ui/theme/themes.dart';
 import 'package:cv_for_khamidjon/utils/app_settings_cubit.dart';
 import 'package:flutter/material.dart';

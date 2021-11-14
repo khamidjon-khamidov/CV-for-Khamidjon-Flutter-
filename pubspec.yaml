@@ -36,6 +36,9 @@ dependencies:
   json_annotation: ^4.3.0
   encrypt: ^5.0.1
 
+  #image
+  cached_network_image: ^3.1.0+1
+
 dev_dependencies:
   bloc_test: ^8.5.0
   flutter_test:
