@@ -289,6 +289,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Flutter Developer`
+  String get flutter_developer {
+    return Intl.message(
+      'Flutter Developer',
+      name: 'flutter_developer',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

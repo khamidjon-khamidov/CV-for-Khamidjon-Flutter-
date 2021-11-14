@@ -25,3 +25,4 @@ part 'view/home.dart';
 part 'view/widgets/experience.dart';
 part 'view/widgets/home_image_experience.dart';
 part 'view/widgets/home_top_title.dart';
+part 'view/widgets/skill_description.dart';

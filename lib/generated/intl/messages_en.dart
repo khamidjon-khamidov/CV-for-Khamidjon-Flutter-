@@ -34,6 +34,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "exit": MessageLookupByLibrary.simpleMessage("Exit"),
         "fetching_data_failed":
             MessageLookupByLibrary.simpleMessage("Fetching data failed!"),
+        "flutter_developer":
+            MessageLookupByLibrary.simpleMessage("Flutter Developer"),
         "function_in_development":
             MessageLookupByLibrary.simpleMessage("Function in development"),
         "hiI_am": MessageLookupByLibrary.simpleMessage("Hi, I am"),

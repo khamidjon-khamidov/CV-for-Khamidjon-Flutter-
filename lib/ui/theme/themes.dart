@@ -23,7 +23,10 @@ class AppThemes {
           headline1: TextStyle(color: AppColors.highEmphasisTextDark),
           headline2: TextStyle(color: AppColors.highEmphasisTextDark),
           headline3: TextStyle(color: AppColors.highEmphasisTextDark),
-          headline4: TextStyle(color: AppColors.disabledTextDark),
+          headline4: TextStyle(
+            color: AppColors.disabledTextDark,
+            fontSize: 18,
+          ),
           headline5: TextStyle(color: AppColors.mediumEmphasisTextDark),
           headline6: TextStyle(color: AppColors.highEmphasisTextDark),
           subtitle1: TextStyle(color: AppColors.highEmphasisTextDark),
