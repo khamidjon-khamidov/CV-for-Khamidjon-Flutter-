@@ -6,7 +6,7 @@
 // // https://opensource.org/licenses/MIT.
 //
 // import 'package:bloc_test/bloc_test.dart';
-// import 'package:cv_for_khamidjon/ui/screens/about_me/about_me.dart';
+// import 'package:cv_for_khamidjon/ui/screens/about_me/home_pages_bloc.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:flutter_test/flutter_test.dart';
@@ -16,7 +16,7 @@
 //
 // class MockCounterCubit extends MockCubit<int> implements CounterCubit {}
 //
-// void main() {
+// void main_pages() {
 //   group('CounterPage', () {
 //     testWidgets('renders CounterView', (tester) async {
 //       await tester.pumpApp(const CounterPage());

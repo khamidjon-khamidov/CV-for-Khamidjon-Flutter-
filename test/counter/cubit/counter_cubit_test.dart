@@ -6,10 +6,10 @@
 // // https://opensource.org/licenses/MIT.
 //
 // import 'package:bloc_test/bloc_test.dart';
-// import 'package:cv_for_khamidjon/ui/screens/about_me/about_me.dart';
+// import 'package:cv_for_khamidjon/ui/screens/about_me/home_pages_bloc.dart';
 // import 'package:flutter_test/flutter_test.dart';
 //
-// void main() {
+// void main_pages() {
 //   group('CounterCubit', () {
 //     test('initial state is 0', () {
 //       expect(CounterCubit().state, equals(0));

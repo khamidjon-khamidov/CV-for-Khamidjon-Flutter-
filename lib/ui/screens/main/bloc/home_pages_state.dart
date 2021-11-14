@@ -1,4 +1,4 @@
-import 'package:cv_for_khamidjon/domain/models/main/about_me.dart';
+import 'package:cv_for_khamidjon/domain/models/main_pages/about_me.dart';
 import 'package:equatable/equatable.dart';
 
 class AboutMeState extends Equatable {

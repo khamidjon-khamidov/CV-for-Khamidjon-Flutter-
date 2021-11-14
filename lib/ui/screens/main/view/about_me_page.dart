@@ -1,4 +1,4 @@
-part of about_me;
+part of home_pages;
 
 class AboutMePage extends StatelessWidget {
   const AboutMePage({Key? key}) : super(key: key);

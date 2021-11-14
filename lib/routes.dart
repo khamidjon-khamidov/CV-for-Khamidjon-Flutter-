@@ -1,7 +1,7 @@
 import 'package:cv_for_khamidjon/ui/screens/achievements/view/achievements.dart';
 import 'package:cv_for_khamidjon/ui/screens/app_details/view/app_details.dart';
-import 'package:cv_for_khamidjon/ui/screens/main/about_me/about_me.dart';
-import 'package:cv_for_khamidjon/ui/screens/main/home/view/home.dart';
+import 'package:cv_for_khamidjon/ui/screens/main/home_pages.dart';
+import 'package:cv_for_khamidjon/ui/screens/main/view/home.dart';
 import 'package:cv_for_khamidjon/ui/screens/posts/view/posts.dart';
 import 'package:cv_for_khamidjon/ui/screens/projects/view/projects.dart';
 import 'package:cv_for_khamidjon/ui/screens/skills/view/skills.dart';

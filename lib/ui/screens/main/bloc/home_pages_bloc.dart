@@ -1,4 +1,4 @@
-part of about_me;
+part of home_pages;
 
 class AboutMeBloc extends Bloc<AboutMeEvent, AboutMeState> {
   final MainRepository _mainRepository;

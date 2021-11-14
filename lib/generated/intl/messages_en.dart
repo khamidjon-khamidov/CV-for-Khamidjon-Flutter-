@@ -22,36 +22,29 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "connection_is_lost":
-            MessageLookupByLibrary.simpleMessage("Connection is lost"),
+        "connection_is_lost": MessageLookupByLibrary.simpleMessage("Connection is lost"),
         "data_got_from_storage_due_to_network_error":
-            MessageLookupByLibrary.simpleMessage(
-                "Data got from storage due to Network Error"),
+            MessageLookupByLibrary.simpleMessage("Data got from storage due to Network Error"),
         "data_received_successfully":
             MessageLookupByLibrary.simpleMessage("Data Received Successfully"),
         "exit": MessageLookupByLibrary.simpleMessage("Exit"),
-        "fetching_data_failed":
-            MessageLookupByLibrary.simpleMessage("Fetching data failed!"),
-        "function_in_development":
-            MessageLookupByLibrary.simpleMessage("Function in development"),
+        "fetching_data_failed": MessageLookupByLibrary.simpleMessage("Fetching data failed!"),
+        "function_in_development": MessageLookupByLibrary.simpleMessage("Function in development"),
         "more_options": MessageLookupByLibrary.simpleMessage("More Options"),
         "my_name": MessageLookupByLibrary.simpleMessage("Khamidjon Khamidov"),
         "page_about_me": MessageLookupByLibrary.simpleMessage("About Me"),
-        "page_achievements":
-            MessageLookupByLibrary.simpleMessage("Achievements"),
+        "page_achievements": MessageLookupByLibrary.simpleMessage("Achievements"),
         "page_app_details": MessageLookupByLibrary.simpleMessage("App Details"),
         "page_home": MessageLookupByLibrary.simpleMessage("Home"),
         "page_posts": MessageLookupByLibrary.simpleMessage("Posts"),
         "page_projects": MessageLookupByLibrary.simpleMessage("Projects"),
         "page_skills": MessageLookupByLibrary.simpleMessage("Skills"),
-        "please_check_your_internet_connection":
-            MessageLookupByLibrary.simpleMessage(
-                "Please check your wifi or mobile network connection"),
+        "please_check_your_internet_connection": MessageLookupByLibrary.simpleMessage(
+            "Please check your wifi or mobile network connection"),
         "some_error": MessageLookupByLibrary.simpleMessage("Some error!"),
         "success": MessageLookupByLibrary.simpleMessage("Success"),
         "warning": MessageLookupByLibrary.simpleMessage("Warning!"),
         "your_internet_connection_was_restored":
-            MessageLookupByLibrary.simpleMessage(
-                "Your internet connection was restored")
+            MessageLookupByLibrary.simpleMessage("Your internet connection was restored")
       };
 }

@@ -1,7 +1,7 @@
 import 'package:cv_for_khamidjon/base/base_api_provider.dart';
 import 'package:cv_for_khamidjon/base/logger.dart';
 import 'package:cv_for_khamidjon/domain/models/ServerErrorResponse.dart';
-import 'package:cv_for_khamidjon/domain/models/main/about_me.dart';
+import 'package:cv_for_khamidjon/domain/models/main_pages/about_me.dart';
 import 'package:cv_for_khamidjon/utils/constants.dart';
 import 'package:cv_for_khamidjon/utils/server_response.dart';
 import 'package:dio/src/dio.dart';

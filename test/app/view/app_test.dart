@@ -5,7 +5,7 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
-// void main() {
+// void main_pages() {
 //   group('App', () {
 //     testWidgets('renders CounterPage', (tester) async {
 //       await tester.pumpWidget(const App());

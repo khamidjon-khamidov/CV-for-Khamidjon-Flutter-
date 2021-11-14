@@ -4,7 +4,7 @@ import 'package:cv_for_khamidjon/base/database.dart';
 import 'package:cv_for_khamidjon/base/dio_builder.dart';
 import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
 import 'package:cv_for_khamidjon/domain/repositories/main_repository.dart';
-import 'package:cv_for_khamidjon/ui/screens/main/about_me/about_me.dart';
+import 'package:cv_for_khamidjon/ui/screens/main/home_pages.dart';
 import 'package:cv_for_khamidjon/utils/app_level_variables.dart';
 import 'package:cv_for_khamidjon/utils/app_settings_cubit.dart';
 import 'package:flutter/foundation.dart';
