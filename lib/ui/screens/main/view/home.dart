@@ -87,62 +87,104 @@ class _HomeViewState extends State<HomeView> {
             onRefresh: _onRefresh,
             child: ListView(
               children: [
-                SizedBox(height: 20),
-                Center(
-                  child: Text(
-                    'Hi, I am',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Theme.of(context).textTheme.headline5!.color!,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 15),
-                Center(
-                  child: Text(
-                    S.current.my_name,
-                    style: GoogleFonts.aBeeZee().copyWith(
-                      fontSize: 24,
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 600,
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          height: 550,
-                          child: CachedNetworkImage(
-                            imageUrl: aboutMe.pictureLink,
-                            placeholder: (_, __) {
-                              return Container();
-                            },
-                          ),
-                        ),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Card(
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.one_x_mobiledata,
-                                color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: InkWell(
+                    onTap: () {},
+                    child: Container(
+                      color: Theme.of(context).splashColor.withAlpha((255 * 0.15).toInt()),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          SizedBox(height: 20),
+                          Center(
+                            child: Text(
+                              S.of(context).hiI_am,
+                              style: TextStyle(
+                                fontSize: 18,
+                                color: Theme.of(context).textTheme.headline5!.color!,
                               ),
-                            ],
+                            ),
                           ),
-                        ),
-                      )
-                    ],
+                          SizedBox(height: 15),
+                          Center(
+                            child: Text(
+                              S.current.my_name,
+                              style: GoogleFonts.aBeeZee().copyWith(
+                                fontSize: 24,
+                                color: Theme.of(context).colorScheme.secondary,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 600,
+                            child: Stack(
+                              children: [
+                                Positioned(
+                                  top: 0,
+                                  left: 0,
+                                  right: 0,
+                                  child: Container(
+                                    height: 550,
+                                    child: CachedNetworkImage(
+                                      imageUrl: aboutMe.pictureLink,
+                                      placeholder: (_, __) {
+                                        return Container();
+                                      },
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 0,
+                                  left: 0,
+                                  right: 0,
+                                  child: Row(
+                                    children: [
+                                      Spacer(),
+                                      Card(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(55),
+                                        ),
+                                        // color: Theme.of(context).scaffoldBackgroundColor,
+                                        elevation: 10,
+                                        child: Padding(
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 45,
+                                            vertical: 12,
+                                          ),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            children: [
+                                              Experience(
+                                                path: AppImages.mobileDevelopment,
+                                                title: S.current.mobile_development,
+                                                padding: 10,
+                                              ),
+                                              SizedBox(width: 40),
+                                              Experience(
+                                                path: AppImages.algorithms,
+                                                title: S.current.algorithms_cc,
+                                              ),
+                                              SizedBox(width: 40),
+                                              Experience(
+                                                path: AppImages.webDevelopment,
+                                                title: S.current.web_development,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Spacer(),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ],

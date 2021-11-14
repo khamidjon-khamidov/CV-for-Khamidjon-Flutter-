@@ -1,5 +1,4 @@
-import 'package:cv_for_khamidjon/domain/models/main_pages/about_me.dart';
-import 'package:equatable/equatable.dart';
+part of home_pages;
 
 class AboutMeState extends Equatable {
   final String? extraMessage;

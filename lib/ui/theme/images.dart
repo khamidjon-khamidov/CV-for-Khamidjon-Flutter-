@@ -7,4 +7,7 @@ abstract class AppImages {
   static String appDetails = 'assets/menu_images/app_details.png';
   static String projects = 'assets/menu_images/projects.png';
   static String skills = 'assets/menu_images/skills.png';
+  static String algorithms = 'assets/experience_icons/algorithms.png';
+  static String mobileDevelopment = 'assets/experience_icons/mobile_development.png';
+  static String webDevelopment = 'assets/experience_icons/web_development.png';
 }

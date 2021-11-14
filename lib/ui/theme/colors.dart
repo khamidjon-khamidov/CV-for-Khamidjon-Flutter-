@@ -32,8 +32,10 @@ class AppColors {
   static Color primaryTextColorDark = const Color(0xffBB86FC);
   static Color textOnPrimaryDark = const Color(0xff1D1D1D);
   static Color errorColorDark = const Color(0xffCF6679);
+  static Color colorOnAccentDark = const Color(0xff1D1D1D);
   static Color highEmphasisTextDark = Colors.white.withAlpha(221); // 87%
   static Color mediumEmphasisTextDark = Colors.white.withAlpha(153); // 60%
   static Color disabledTextDark = Colors.white.withAlpha(97); // 38%
   static Color overlayButtonColorDark = Colors.white.withAlpha(31); // 12%
+  static Color cardColorDark = const Color(0xff1E1E1E);
 }

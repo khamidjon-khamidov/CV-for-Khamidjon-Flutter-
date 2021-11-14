@@ -14,6 +14,7 @@ class AppThemes {
           accentColor: AppColors.colorAccentDark,
           errorColor: AppColors.errorColorDark,
         ),
+        cardColor: AppColors.cardColorDark,
         canvasColor: AppColors.screenBackgroundDark,
         dividerColor: AppColors.disabledTextDark,
         primaryColor: AppColors.colorPrimaryDark,

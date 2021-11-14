@@ -19,5 +19,9 @@
   "page_posts": "Posts",
   "page_app_details": "App Details",
   "more_options": "More Options",
-  "exit": "Exit"
+  "exit": "Exit",
+  "hiI_am": "Hi, I am",
+  "mobile_development": "Mobile\nDevelopment",
+  "algorithms_cc": "Algorithms\nC/C++",
+  "web_development": "Web\nDevelopment"
 }

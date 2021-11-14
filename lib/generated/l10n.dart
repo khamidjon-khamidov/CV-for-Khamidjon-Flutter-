@@ -249,6 +249,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Hi, I am`
+  String get hiI_am {
+    return Intl.message(
+      'Hi, I am',
+      name: 'hiI_am',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile\nDevelopment`
+  String get mobile_development {
+    return Intl.message(
+      'Mobile\nDevelopment',
+      name: 'mobile_development',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Algorithms\nC/C++`
+  String get algorithms_cc {
+    return Intl.message(
+      'Algorithms\nC/C++',
+      name: 'algorithms_cc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Web\nDevelopment`
+  String get web_development {
+    return Intl.message(
+      'Web\nDevelopment',
+      name: 'web_development',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

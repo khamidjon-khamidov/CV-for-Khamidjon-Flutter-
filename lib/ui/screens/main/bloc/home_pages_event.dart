@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of home_pages;
 
 abstract class AboutMeEvent extends Equatable {
   @override

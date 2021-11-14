@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "algorithms_cc":
+            MessageLookupByLibrary.simpleMessage("Algorithms\nC/C++"),
         "connection_is_lost":
             MessageLookupByLibrary.simpleMessage("Connection is lost"),
         "data_got_from_storage_due_to_network_error":
@@ -34,6 +36,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Fetching data failed!"),
         "function_in_development":
             MessageLookupByLibrary.simpleMessage("Function in development"),
+        "hiI_am": MessageLookupByLibrary.simpleMessage("Hi, I am"),
+        "mobile_development":
+            MessageLookupByLibrary.simpleMessage("Mobile\nDevelopment"),
         "more_options": MessageLookupByLibrary.simpleMessage("More Options"),
         "my_name": MessageLookupByLibrary.simpleMessage("Khamidjon Khamidov"),
         "page_about_me": MessageLookupByLibrary.simpleMessage("About Me"),
@@ -50,6 +55,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "some_error": MessageLookupByLibrary.simpleMessage("Some error!"),
         "success": MessageLookupByLibrary.simpleMessage("Success"),
         "warning": MessageLookupByLibrary.simpleMessage("Warning!"),
+        "web_development":
+            MessageLookupByLibrary.simpleMessage("Web\nDevelopment"),
         "your_internet_connection_was_restored":
             MessageLookupByLibrary.simpleMessage(
                 "Your internet connection was restored")
