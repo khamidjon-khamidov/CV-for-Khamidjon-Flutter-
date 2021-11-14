@@ -85,19 +85,28 @@ class _AboutMeViewState extends State<AboutMeView> {
             header: WaterDropMaterialHeader(),
             controller: _refreshController,
             onRefresh: _onRefresh,
-            child: Padding(
-              padding: EdgeInsets.only(
-                top: 12,
-                left: 12,
-                right: 12,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  MyIntro(),
-                  ExperienceText(),
-                ],
-              ),
+            child: ListView(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: 12,
+                    left: 12,
+                    right: 12,
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      MyIntro(),
+                      ExperienceText(),
+                      SizedBox(height: 30),
+                      Details(aboutMe: aboutMe),
+                      SizedBox(height: 30),
+                      MyInterests(),
+                    ],
+                  ),
+                ),
+              ],
             ),
           );
         },

@@ -320,10 +320,10 @@ class S {
     );
   }
 
-  /// `Development Experience:`
+  /// `Development Experience`
   String get development_experience {
     return Intl.message(
-      'Development Experience:',
+      'Development Experience',
       name: 'development_experience',
       desc: '',
       args: [],
@@ -335,6 +335,126 @@ class S {
     return Intl.message(
       '• Algorithms(C/C++) - 1.5 years\n• Java/Kotlin Android - 2 years\n• Flutter - since 2020\n• Python Automation\n• Bash Scripts\n• NodeJs\n• ReactJs\n',
       name: 'experience_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone`
+  String get phone {
+    return Intl.message(
+      'Phone',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Education`
+  String get education {
+    return Intl.message(
+      'Education',
+      name: 'education',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Experience`
+  String get experience {
+    return Intl.message(
+      'Experience',
+      name: 'experience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Since September, 2017`
+  String get experience_start_date {
+    return Intl.message(
+      'Since September, 2017',
+      name: 'experience_start_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal Details`
+  String get personal_details {
+    return Intl.message(
+      'Personal Details',
+      name: 'personal_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Interests`
+  String get my_interests {
+    return Intl.message(
+      'My Interests',
+      name: 'my_interests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Music`
+  String get music {
+    return Intl.message(
+      'Music',
+      name: 'music',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Film`
+  String get film {
+    return Intl.message(
+      'Film',
+      name: 'film',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Travel`
+  String get travel {
+    return Intl.message(
+      'Travel',
+      name: 'travel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chess`
+  String get chess {
+    return Intl.message(
+      'Chess',
+      name: 'chess',
       desc: '',
       args: [],
     );

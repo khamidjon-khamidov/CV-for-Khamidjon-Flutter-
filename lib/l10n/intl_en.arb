@@ -27,6 +27,18 @@
   "flutter_developer": "Flutter Developer",
   "my_intro": "My Intro",
   "experience_description": "I have been in programming since 2017. Over this period, I have acquired skills Algorithms in C/C++, Python, Java/Kotlin Android, ReactJs, NodeJs, Flutter. My main tech stack currently is Flutter Development which I started my first experience in September, 2020.",
-  "development_experience": "Development Experience:",
-  "experience_details": "• Algorithms(C/C++) - 1.5 years\n• Java/Kotlin Android - 2 years\n• Flutter - since 2020\n• Python Automation\n• Bash Scripts\n• NodeJs\n• ReactJs\n"
+  "development_experience": "Development Experience",
+  "experience_details": "• Algorithms(C/C++) - 1.5 years\n• Java/Kotlin Android - 2 years\n• Flutter - since 2020\n• Python Automation\n• Bash Scripts\n• NodeJs\n• ReactJs\n",
+  "name": "Name",
+  "phone": "Phone",
+  "email": "Email",
+  "education": "Education",
+  "experience": "Experience",
+  "experience_start_date": "Since September, 2017",
+  "personal_details": "Personal Details",
+  "my_interests": "My Interests",
+  "music": "Music",
+  "film": "Film",
+  "travel": "Travel",
+  "chess": "Chess"
 }
