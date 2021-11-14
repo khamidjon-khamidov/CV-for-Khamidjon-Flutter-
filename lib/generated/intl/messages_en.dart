@@ -31,7 +31,13 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Data got from storage due to Network Error"),
         "data_received_successfully":
             MessageLookupByLibrary.simpleMessage("Data Received Successfully"),
+        "development_experience":
+            MessageLookupByLibrary.simpleMessage("Development Experience:"),
         "exit": MessageLookupByLibrary.simpleMessage("Exit"),
+        "experience_description": MessageLookupByLibrary.simpleMessage(
+            "I have been in programming since 2017. Over this period, I have acquired skills Algorithms in C/C++, Python, Java/Kotlin Android, ReactJs, NodeJs, Flutter. My main tech stack currently is Flutter Development which I started my first experience in September, 2020."),
+        "experience_details": MessageLookupByLibrary.simpleMessage(
+            "• Algorithms(C/C++) - 1.5 years\n• Java/Kotlin Android - 2 years\n• Flutter - since 2020\n• Python Automation\n• Bash Scripts\n• NodeJs\n• ReactJs\n"),
         "fetching_data_failed":
             MessageLookupByLibrary.simpleMessage("Fetching data failed!"),
         "flutter_developer":
@@ -42,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "mobile_development":
             MessageLookupByLibrary.simpleMessage("Mobile\nDevelopment"),
         "more_options": MessageLookupByLibrary.simpleMessage("More Options"),
+        "my_intro": MessageLookupByLibrary.simpleMessage("My Intro"),
         "my_name": MessageLookupByLibrary.simpleMessage("Khamidjon Khamidov"),
         "page_about_me": MessageLookupByLibrary.simpleMessage("About Me"),
         "page_achievements":

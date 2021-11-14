@@ -76,7 +76,7 @@ class _HomeViewState extends State<HomeView> {
               header: WaterDropMaterialHeader(),
               controller: _refreshController,
               onRefresh: _onRefresh,
-              child: aboutMe != null ? Text(aboutMe.toJson().toString()) : Container(),
+              child: Container(),
             );
           }
 

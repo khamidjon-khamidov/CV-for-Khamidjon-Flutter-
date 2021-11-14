@@ -24,5 +24,9 @@
   "mobile_development": "Mobile\nDevelopment",
   "algorithms_cc": "Algorithms\nC/C++",
   "web_development": "Web\nDevelopment",
-  "flutter_developer": "Flutter Developer"
+  "flutter_developer": "Flutter Developer",
+  "my_intro": "My Intro",
+  "experience_description": "I have been in programming since 2017. Over this period, I have acquired skills Algorithms in C/C++, Python, Java/Kotlin Android, ReactJs, NodeJs, Flutter. My main tech stack currently is Flutter Development which I started my first experience in September, 2020.",
+  "development_experience": "Development Experience:",
+  "experience_details": "• Algorithms(C/C++) - 1.5 years\n• Java/Kotlin Android - 2 years\n• Flutter - since 2020\n• Python Automation\n• Bash Scripts\n• NodeJs\n• ReactJs\n"
 }

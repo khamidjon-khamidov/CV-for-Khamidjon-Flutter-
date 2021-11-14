@@ -70,12 +70,35 @@ class _AboutMeViewState extends State<AboutMeView> {
             aboutMe = state.aboutMe;
           }
 
+          if (aboutMe == null) {
+            return SmartRefresher(
+              enablePullDown: true,
+              header: WaterDropMaterialHeader(),
+              controller: _refreshController,
+              onRefresh: _onRefresh,
+              child: Container(),
+            );
+          }
+
           return SmartRefresher(
             enablePullDown: true,
             header: WaterDropMaterialHeader(),
             controller: _refreshController,
             onRefresh: _onRefresh,
-            child: aboutMe != null ? Text(aboutMe.toJson().toString()) : Container(),
+            child: Padding(
+              padding: EdgeInsets.only(
+                top: 12,
+                left: 12,
+                right: 12,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  MyIntro(),
+                  ExperienceText(),
+                ],
+              ),
+            ),
           );
         },
       ),

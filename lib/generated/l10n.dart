@@ -299,6 +299,46 @@ class S {
       args: [],
     );
   }
+
+  /// `My Intro`
+  String get my_intro {
+    return Intl.message(
+      'My Intro',
+      name: 'my_intro',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I have been in programming since 2017. Over this period, I have acquired skills Algorithms in C/C++, Python, Java/Kotlin Android, ReactJs, NodeJs, Flutter. My main tech stack currently is Flutter Development which I started my first experience in September, 2020.`
+  String get experience_description {
+    return Intl.message(
+      'I have been in programming since 2017. Over this period, I have acquired skills Algorithms in C/C++, Python, Java/Kotlin Android, ReactJs, NodeJs, Flutter. My main tech stack currently is Flutter Development which I started my first experience in September, 2020.',
+      name: 'experience_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Development Experience:`
+  String get development_experience {
+    return Intl.message(
+      'Development Experience:',
+      name: 'development_experience',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `• Algorithms(C/C++) - 1.5 years\n• Java/Kotlin Android - 2 years\n• Flutter - since 2020\n• Python Automation\n• Bash Scripts\n• NodeJs\n• ReactJs\n`
+  String get experience_details {
+    return Intl.message(
+      '• Algorithms(C/C++) - 1.5 years\n• Java/Kotlin Android - 2 years\n• Flutter - since 2020\n• Python Automation\n• Bash Scripts\n• NodeJs\n• ReactJs\n',
+      name: 'experience_details',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
