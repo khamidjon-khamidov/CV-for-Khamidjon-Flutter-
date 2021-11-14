@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
 import 'package:cv_for_khamidjon/generated/l10n.dart';
 import 'package:cv_for_khamidjon/routes.dart';
@@ -8,10 +10,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/src/provider.dart';
 
 class AppDrawer extends StatelessWidget {
-  const AppDrawer({Key? key}) : super(key: key);
-
+  AppDrawer({Key? key}) : super(key: key);
+  late final Color menuIconColor;
+  late final Color menuNameColor;
   @override
   Widget build(BuildContext context) {
+    menuIconColor = Theme.of(context).primaryColor;
+    menuNameColor = Theme.of(context).textTheme.headline1!.color!;
+
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -19,43 +25,43 @@ class AppDrawer extends StatelessWidget {
           _createHeader(context),
           _createDrawerItem(
             context: context,
-            icon: Icons.contacts,
+            menuIconImage: _createMenuImage(context, AppImages.home),
             text: S.current.page_home,
             onTap: () => AppRouteSettings.goToHomePage(context),
           ),
           _createDrawerItem(
             context: context,
-            icon: Icons.event,
+            menuIconImage: _createMenuImage(context, AppImages.aboutMe),
             text: S.current.page_about_me,
             onTap: () => AppRouteSettings.goToAboutMePage(context),
           ),
           _createDrawerItem(
             context: context,
-            icon: Icons.note,
+            menuIconImage: _createMenuImage(context, AppImages.skills),
             text: S.current.page_skills,
             onTap: () => AppRouteSettings.goToSkillsPage(context),
           ),
           _createDrawerItem(
             context: context,
-            icon: Icons.collections_bookmark,
+            menuIconImage: _createMenuImage(context, AppImages.achievements),
             text: S.current.page_achievements,
             onTap: () => AppRouteSettings.goToAchievementsPage(context),
           ),
           _createDrawerItem(
             context: context,
-            icon: Icons.face,
+            menuIconImage: _createMenuImage(context, AppImages.projects),
             text: S.current.page_projects,
             onTap: () => AppRouteSettings.goToProjectsPage(context),
           ),
           _createDrawerItem(
             context: context,
-            icon: Icons.account_box,
+            menuIconImage: _createMenuImage(context, AppImages.posts),
             text: S.current.page_posts,
             onTap: () => AppRouteSettings.goToPostsPage(context),
           ),
           _createDrawerItem(
               context: context,
-              icon: Icons.stars,
+              menuIconImage: _createMenuImage(context, AppImages.appDetails),
               text: S.current.page_app_details,
               onTap: () => AppRouteSettings.goToAppDetailsPage(context)),
           Divider(),
@@ -70,11 +76,29 @@ class AppDrawer extends StatelessWidget {
           ),
           _createDrawerItem(
             context: context,
-            icon: Icons.bug_report,
+            menuIconImage: _createMenuIcon(context, Icons.exit_to_app),
             text: S.current.exit,
           ),
         ],
       ),
+    );
+  }
+
+  Widget _createMenuImage(BuildContext context, String source) {
+    return ColorFiltered(
+      colorFilter: ColorFilter.mode(menuIconColor, BlendMode.srcATop),
+      child: Image.asset(
+        source,
+        height: 20,
+      ),
+    );
+  }
+
+  Widget _createMenuIcon(BuildContext context, IconData icon) {
+    return Icon(
+      icon,
+      size: 20,
+      color: menuIconColor,
     );
   }
 
@@ -149,22 +173,19 @@ class AppDrawer extends StatelessWidget {
 
   Widget _createDrawerItem({
     required BuildContext context,
-    required IconData icon,
+    required Widget menuIconImage,
     required String text,
     GestureTapCallback? onTap,
   }) {
     return ListTile(
       title: Row(
         children: <Widget>[
-          Icon(
-            icon,
-            color: Theme.of(context).colorScheme.secondary,
-          ),
+          menuIconImage,
           Padding(
             padding: EdgeInsets.only(left: 8.0),
             child: Text(
               text,
-              style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+              style: TextStyle(color: menuNameColor),
             ),
           )
         ],
