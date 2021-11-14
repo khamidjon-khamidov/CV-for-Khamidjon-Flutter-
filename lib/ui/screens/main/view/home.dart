@@ -79,7 +79,7 @@ class _HomeViewState extends State<HomeView> {
               child: aboutMe != null ? Text(aboutMe.toJson().toString()) : Container(),
             );
           }
-// Theme.of(context).primaryColor.withAlpha((256 * 0.2).toInt())
+
           return SmartRefresher(
             enablePullDown: true,
             header: WaterDropMaterialHeader(),
