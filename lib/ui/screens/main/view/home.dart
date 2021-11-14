@@ -99,6 +99,8 @@ class _HomeViewState extends State<HomeView> {
                           TopTitle(),
                           ImageExperience(pictureLink: aboutMe.pictureLink),
                           SkillDescription(description: aboutMe.description),
+                          SizedBox(height: 18),
+                          ContactItems(),
                           SizedBox(height: 24),
                         ],
                       ),

@@ -14,14 +14,18 @@ import 'package:cv_for_khamidjon/ui/theme/images.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'bloc/home_pages_bloc.dart';
 part 'bloc/home_pages_event.dart';
 part 'bloc/home_pages_state.dart';
 part 'view/about_me_page.dart';
 part 'view/home.dart';
+part 'view/widgets/contact_items.dart';
+part 'view/widgets/contact_link.dart';
 part 'view/widgets/experience.dart';
 part 'view/widgets/home_image_experience.dart';
 part 'view/widgets/home_top_title.dart';
