@@ -10,4 +10,5 @@ abstract class AppImages {
   static String algorithms = 'assets/experience_icons/algorithms.png';
   static String mobileDevelopment = 'assets/experience_icons/mobile_development.png';
   static String webDevelopment = 'assets/experience_icons/web_development.png';
+  static String cv = 'assets/images/cv.png';
 }

@@ -18,6 +18,7 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   RefreshController _refreshController = RefreshController(initialRefresh: false);
+  String? cvLink;
 
   void _onRefresh() async {
     context.read<AboutMeBloc>().add(GetAboutMeEvent());
@@ -29,6 +30,25 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         title: Text(S.current.page_home),
+        actions: [
+          InkWell(
+            customBorder: CircleBorder(),
+            onTap: () {},
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ColorFiltered(
+                colorFilter: ColorFilter.mode(
+                  Theme.of(context).colorScheme.secondary,
+                  BlendMode.srcATop,
+                ),
+                child: Image.asset(
+                  AppImages.cv,
+                  width: 30,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
       drawer: AppDrawer(),
       body: BlocBuilder<AboutMeBloc, AboutMeState>(
@@ -79,6 +99,8 @@ class _HomeViewState extends State<HomeView> {
               child: Container(),
             );
           }
+
+          cvLink = aboutMe.cvLink;
 
           return SmartRefresher(
             enablePullDown: true,
