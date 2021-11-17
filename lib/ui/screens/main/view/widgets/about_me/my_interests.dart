@@ -1,7 +1,7 @@
 part of home_pages;
 
-class MyInterests extends StatelessWidget {
-  const MyInterests({Key? key}) : super(key: key);
+class _MyInterests extends StatelessWidget {
+  const _MyInterests({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

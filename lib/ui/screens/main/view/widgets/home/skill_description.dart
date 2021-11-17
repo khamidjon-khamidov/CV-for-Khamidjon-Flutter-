@@ -1,9 +1,9 @@
 part of home_pages;
 
-class SkillDescription extends StatelessWidget {
+class _SkillDescription extends StatelessWidget {
   final String description;
 
-  SkillDescription({
+  _SkillDescription({
     required this.description,
     Key? key,
   }) : super(key: key);

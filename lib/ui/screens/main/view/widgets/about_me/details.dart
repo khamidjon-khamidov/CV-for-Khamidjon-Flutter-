@@ -1,9 +1,9 @@
 part of home_pages;
 
-class Details extends StatelessWidget {
+class _Details extends StatelessWidget {
   final AboutMe aboutMe;
 
-  Details({
+  _Details({
     required this.aboutMe,
     Key? key,
   }) : super(key: key);
@@ -22,27 +22,27 @@ class Details extends StatelessWidget {
           ),
         ),
         SizedBox(height: 12),
-        DetailItem(
+        _DetailItem(
           title: S.of(context).name,
           detail: S.current.my_name,
           icon: FontAwesomeIcons.userAlt,
         ),
-        DetailItem(
+        _DetailItem(
           title: S.of(context).phone,
           detail: aboutMe.phone,
           icon: FontAwesomeIcons.phone,
         ),
-        DetailItem(
+        _DetailItem(
           title: S.of(context).email,
           detail: aboutMe.email,
           icon: FontAwesomeIcons.at,
         ),
-        DetailItem(
+        _DetailItem(
           title: S.of(context).education,
           detail: aboutMe.education.map((e) => e.name).toList().join(', '),
           icon: FontAwesomeIcons.graduationCap,
         ),
-        DetailItem(
+        _DetailItem(
           title: S.of(context).experience,
           detail: S.of(context).experience_start_date,
           icon: FontAwesomeIcons.graduationCap,

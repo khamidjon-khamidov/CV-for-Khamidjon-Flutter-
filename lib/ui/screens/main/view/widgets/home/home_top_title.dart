@@ -1,7 +1,7 @@
 part of home_pages;
 
-class TopTitle extends StatelessWidget {
-  const TopTitle({Key? key}) : super(key: key);
+class _TopTitle extends StatelessWidget {
+  const _TopTitle({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

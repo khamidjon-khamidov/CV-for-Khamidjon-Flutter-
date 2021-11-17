@@ -459,6 +459,16 @@ class S {
       args: [],
     );
   }
+
+  /// `CV is being downloaded`
+  String get cv_is_being_downloaded {
+    return Intl.message(
+      'CV is being downloaded',
+      name: 'cv_is_being_downloaded',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

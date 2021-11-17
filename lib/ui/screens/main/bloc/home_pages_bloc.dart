@@ -1,32 +1,62 @@
 part of home_pages;
 
-class AboutMeBloc extends Bloc<AboutMeEvent, AboutMeState> {
+class HomePagesBloc extends Bloc<_HomePagesEvent, _AboutMeState> {
   final MainRepository _mainRepository;
+  String? _cvLink;
 
-  AboutMeBloc(this._mainRepository) : super(AboutMeLoadingState()) {
-    on<GetAboutMeEvent>(
+  HomePagesBloc(this._mainRepository) : super(_AboutMeLoadingState()) {
+    on<_GetAboutMeEvent>(
       (event, emit) async {
-        emit(AboutMeLoadingState());
+        emit(_AboutMeLoadingState());
 
-        // try {
-        BlocResponse blockResponse = await _mainRepository.getAboutMe();
-        if (blockResponse is FromNetworkBlocResponse) {
-          emit(AboutMeLoadedFromNetworkState(blockResponse.data,
-              extraMessage: blockResponse.extraMessage));
-        } else if (blockResponse is FromStorageBlockResponse) {
-          emit(AboutMeLoadedFromStorageState(blockResponse.data,
-              extraMessage: blockResponse.extraMessage));
-        } else if (blockResponse is ErrorBlockResponse) {
-          emit(AboutMeErrorState(blockResponse.extraMessage!));
+        try {
+          BlocResponse blockResponse = await _mainRepository.getAboutMe();
+          if (blockResponse is FromNetworkBlocResponse) {
+            _cvLink = (blockResponse.data as AboutMe).cvLink;
+            emit(_AboutMeLoadedFromNetworkState(blockResponse.data,
+                extraMessage: blockResponse.extraMessage));
+          } else if (blockResponse is FromStorageBlockResponse) {
+            _cvLink = (blockResponse.data as AboutMe).cvLink;
+            emit(_AboutMeLoadedFromStorageState(blockResponse.data,
+                extraMessage: blockResponse.extraMessage));
+          } else if (blockResponse is ErrorBlockResponse) {
+            emit(_AboutMeErrorState(blockResponse.extraMessage!));
+          }
+        } catch (e) {
+          logger.e(e, e);
+          emit(_AboutMeErrorState('Unknown error'));
         }
-        // } catch (e) {
-        //   logger.e(e, e);
-        //   emit(AboutMeErrorState('Unknown error'));
-        // }
       },
       transformer: droppable(),
     );
 
-    add(GetAboutMeEvent());
+    on<_DownloadCvEvent>((event, emit) async {
+      if (_cvLink == null) {
+        AppSnackBar.showError(
+          ScaffoldMessenger.of(event.context),
+          title: "CV link hasn't been loaded yet",
+        );
+        return;
+      }
+      String iosPath = (await getApplicationDocumentsDirectory()).path;
+      AppSnackBar.showInfo(
+        ScaffoldMessenger.of(event.context),
+        title: S.current.cv_is_being_downloaded,
+      );
+
+      await FlutterDownloader.enqueue(
+        url: _cvLink!,
+        savedDir: Platform.isAndroid ? '/storage/emulated/0/Download' : iosPath,
+        showNotification: true, // show download progress in status bar (for Android)
+        openFileFromNotification:
+            true, // click on notification to open downloaded file (for Android)
+      );
+    });
+
+    add(_GetAboutMeEvent());
+  }
+
+  void downloadCV(BuildContext context) {
+    add(_DownloadCvEvent(context));
   }
 }

@@ -40,5 +40,6 @@
   "music": "Music",
   "film": "Film",
   "travel": "Travel",
-  "chess": "Chess"
+  "chess": "Chess",
+  "cv_is_being_downloaded": "CV is being downloaded"
 }

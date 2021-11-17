@@ -1,14 +1,16 @@
 part of home_pages;
 
-class ImageExperience extends StatelessWidget {
+class _ImageExperience extends StatelessWidget {
   final String pictureLink;
-  ImageExperience({
+  _ImageExperience({
     required this.pictureLink,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
       height: 600,
       child: Stack(
@@ -42,25 +44,25 @@ class ImageExperience extends StatelessWidget {
                   elevation: 10,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 45,
+                      horizontal: 30,
                       vertical: 12,
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Experience(
+                        _Experience(
                           path: AppImages.mobileDevelopment,
                           title: S.current.mobile_development,
                           padding: 10,
                         ),
-                        SizedBox(width: 40),
-                        Experience(
+                        SizedBox(width: 30),
+                        _Experience(
                           path: AppImages.algorithms,
                           title: S.current.algorithms_cc,
                         ),
-                        SizedBox(width: 40),
-                        Experience(
+                        SizedBox(width: 30),
+                        _Experience(
                           path: AppImages.webDevelopment,
                           title: S.current.web_development,
                         ),

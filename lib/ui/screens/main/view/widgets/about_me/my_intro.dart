@@ -1,7 +1,7 @@
 part of home_pages;
 
-class MyIntro extends StatelessWidget {
-  const MyIntro({Key? key}) : super(key: key);
+class _MyIntro extends StatelessWidget {
+  const _MyIntro({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

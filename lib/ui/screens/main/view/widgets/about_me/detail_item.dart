@@ -1,11 +1,11 @@
 part of home_pages;
 
-class DetailItem extends StatelessWidget {
+class _DetailItem extends StatelessWidget {
   final String title;
   final String detail;
   final IconData icon;
 
-  DetailItem({
+  _DetailItem({
     required this.title,
     required this.detail,
     required this.icon,

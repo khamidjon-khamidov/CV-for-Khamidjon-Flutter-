@@ -1,40 +1,40 @@
 part of home_pages;
 
-class AboutMeState extends Equatable {
+class _AboutMeState extends Equatable {
   final String? extraMessage;
 
-  AboutMeState({this.extraMessage});
+  _AboutMeState({this.extraMessage});
 
   @override
   List<Object?> get props => [extraMessage];
 }
 
-class AboutMeLoadingState extends AboutMeState {
-  AboutMeLoadingState({String? extraMessage}) : super(extraMessage: extraMessage);
+class _AboutMeLoadingState extends _AboutMeState {
+  _AboutMeLoadingState({String? extraMessage}) : super(extraMessage: extraMessage);
 }
 
-class AboutMeLoadedFromStorageState extends AboutMeState {
+class _AboutMeLoadedFromStorageState extends _AboutMeState {
   final AboutMe aboutMe;
 
-  AboutMeLoadedFromStorageState(this.aboutMe, {String? extraMessage})
+  _AboutMeLoadedFromStorageState(this.aboutMe, {String? extraMessage})
       : super(extraMessage: extraMessage);
 
   @override
   List<Object?> get props => [aboutMe];
 }
 
-class AboutMeLoadedFromNetworkState extends AboutMeState {
+class _AboutMeLoadedFromNetworkState extends _AboutMeState {
   final AboutMe aboutMe;
 
-  AboutMeLoadedFromNetworkState(this.aboutMe, {String? extraMessage})
+  _AboutMeLoadedFromNetworkState(this.aboutMe, {String? extraMessage})
       : super(extraMessage: extraMessage);
 
   @override
   List<Object?> get props => [aboutMe];
 }
 
-class AboutMeErrorState extends AboutMeState {
-  AboutMeErrorState(String extraMessage) : super(extraMessage: extraMessage);
+class _AboutMeErrorState extends _AboutMeState {
+  _AboutMeErrorState(String extraMessage) : super(extraMessage: extraMessage);
 
   @override
   List<Object?> get props => [extraMessage];

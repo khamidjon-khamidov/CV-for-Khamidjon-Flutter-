@@ -1,11 +1,11 @@
 part of home_pages;
 
-class ContactLink extends StatelessWidget {
+class _ContactLink extends StatelessWidget {
   final String title;
   final String link;
   final IconData icon;
 
-  ContactLink({
+  _ContactLink({
     required this.title,
     required this.link,
     required this.icon,

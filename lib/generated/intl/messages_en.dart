@@ -27,6 +27,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "chess": MessageLookupByLibrary.simpleMessage("Chess"),
         "connection_is_lost":
             MessageLookupByLibrary.simpleMessage("Connection is lost"),
+        "cv_is_being_downloaded":
+            MessageLookupByLibrary.simpleMessage("CV is being downloaded"),
         "data_got_from_storage_due_to_network_error":
             MessageLookupByLibrary.simpleMessage(
                 "Data got from storage due to Network Error"),

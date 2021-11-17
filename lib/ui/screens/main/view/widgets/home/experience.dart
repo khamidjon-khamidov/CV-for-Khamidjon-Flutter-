@@ -1,11 +1,11 @@
 part of home_pages;
 
-class Experience extends StatelessWidget {
+class _Experience extends StatelessWidget {
   final String title;
   final String path;
   final double padding;
 
-  Experience({
+  _Experience({
     required this.title,
     required this.path,
     this.padding = 0,

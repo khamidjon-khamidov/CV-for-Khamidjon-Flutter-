@@ -5,22 +5,22 @@ class AboutMePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AboutMeView();
+    return _AboutMeView();
   }
 }
 
-class AboutMeView extends StatefulWidget {
-  const AboutMeView({Key? key}) : super(key: key);
+class _AboutMeView extends StatefulWidget {
+  const _AboutMeView({Key? key}) : super(key: key);
 
   @override
-  State<AboutMeView> createState() => _AboutMeViewState();
+  State<_AboutMeView> createState() => _AboutMeViewState();
 }
 
-class _AboutMeViewState extends State<AboutMeView> {
+class _AboutMeViewState extends State<_AboutMeView> {
   RefreshController _refreshController = RefreshController(initialRefresh: false);
 
   void _onRefresh() async {
-    context.read<AboutMeBloc>().add(GetAboutMeEvent());
+    context.read<HomePagesBloc>().add(_GetAboutMeEvent());
     simpleLogger.d('About me: SimpleRefresh: _onRefresh()');
   }
 
@@ -31,14 +31,14 @@ class _AboutMeViewState extends State<AboutMeView> {
         title: Text(S.current.page_about_me),
       ),
       drawer: AppDrawer(),
-      body: BlocBuilder<AboutMeBloc, AboutMeState>(
+      body: BlocBuilder<HomePagesBloc, _AboutMeState>(
         buildWhen: (previous, current) {
           simpleLogger.d('Khamidjon: got state: $current');
-          if (current is AboutMeLoadedFromNetworkState ||
-              current is AboutMeLoadedFromStorageState) {
+          if (current is _AboutMeLoadedFromNetworkState ||
+              current is _AboutMeLoadedFromStorageState) {
             _refreshController.refreshCompleted();
           }
-          if (current is AboutMeErrorState) {
+          if (current is _AboutMeErrorState) {
             _refreshController.refreshFailed();
             AppSnackBar.showError(
               ScaffoldMessenger.of(context),
@@ -46,12 +46,12 @@ class _AboutMeViewState extends State<AboutMeView> {
               title: current.extraMessage,
             );
             return false;
-          } else if (current is AboutMeLoadingState) {
+          } else if (current is _AboutMeLoadingState) {
             simpleLogger.d('inside about me loading state');
             _refreshController.requestRefresh();
             return false;
           }
-          if (!(current is AboutMeErrorState) && current.extraMessage != null)
+          if (!(current is _AboutMeErrorState) && current.extraMessage != null)
             AppSnackBar.showInfo(
               ScaffoldMessenger.of(context),
               title: current.extraMessage!,
@@ -63,10 +63,10 @@ class _AboutMeViewState extends State<AboutMeView> {
           simpleLogger.d('Khamidjon: State About me inside builder: $state');
 
           AboutMe? aboutMe = null;
-          if (state is AboutMeLoadedFromStorageState) {
+          if (state is _AboutMeLoadedFromStorageState) {
             aboutMe = state.aboutMe;
           }
-          if (state is AboutMeLoadedFromNetworkState) {
+          if (state is _AboutMeLoadedFromNetworkState) {
             aboutMe = state.aboutMe;
           }
 
@@ -97,12 +97,12 @@ class _AboutMeViewState extends State<AboutMeView> {
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      MyIntro(),
-                      ExperienceText(),
+                      _MyIntro(),
+                      _ExperienceText(),
                       SizedBox(height: 30),
-                      Details(aboutMe: aboutMe),
+                      _Details(aboutMe: aboutMe),
                       SizedBox(height: 30),
-                      MyInterests(),
+                      _MyInterests(),
                     ],
                   ),
                 ),

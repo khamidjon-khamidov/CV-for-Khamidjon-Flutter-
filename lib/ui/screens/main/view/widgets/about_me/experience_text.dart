@@ -1,7 +1,7 @@
 part of home_pages;
 
-class ExperienceText extends StatelessWidget {
-  const ExperienceText({Key? key}) : super(key: key);
+class _ExperienceText extends StatelessWidget {
+  const _ExperienceText({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

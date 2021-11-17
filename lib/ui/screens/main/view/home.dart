@@ -21,7 +21,7 @@ class _HomeViewState extends State<HomeView> {
   String? cvLink;
 
   void _onRefresh() async {
-    context.read<AboutMeBloc>().add(GetAboutMeEvent());
+    context.read<HomePagesBloc>().add(_GetAboutMeEvent());
     simpleLogger.d('About me: SimpleRefresh: _onRefresh()');
   }
 
@@ -33,7 +33,10 @@ class _HomeViewState extends State<HomeView> {
         actions: [
           InkWell(
             customBorder: CircleBorder(),
-            onTap: () {},
+            onTap: () {
+              if (cvLink == null) return;
+              context.read<HomePagesBloc>().downloadCV(context);
+            },
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: ColorFiltered(
@@ -51,14 +54,14 @@ class _HomeViewState extends State<HomeView> {
         ],
       ),
       drawer: AppDrawer(),
-      body: BlocBuilder<AboutMeBloc, AboutMeState>(
+      body: BlocBuilder<HomePagesBloc, _AboutMeState>(
         buildWhen: (previous, current) {
           simpleLogger.d('Khamidjon: got state: $current');
-          if (current is AboutMeLoadedFromNetworkState ||
-              current is AboutMeLoadedFromStorageState) {
+          if (current is _AboutMeLoadedFromNetworkState ||
+              current is _AboutMeLoadedFromStorageState) {
             _refreshController.refreshCompleted();
           }
-          if (current is AboutMeErrorState) {
+          if (current is _AboutMeErrorState) {
             _refreshController.refreshFailed();
             AppSnackBar.showError(
               ScaffoldMessenger.of(context),
@@ -66,12 +69,12 @@ class _HomeViewState extends State<HomeView> {
               title: current.extraMessage,
             );
             return false;
-          } else if (current is AboutMeLoadingState) {
+          } else if (current is _AboutMeLoadingState) {
             simpleLogger.d('inside about me loading state');
             _refreshController.requestRefresh();
             return false;
           }
-          if (!(current is AboutMeErrorState) && current.extraMessage != null)
+          if (!(current is _AboutMeErrorState) && current.extraMessage != null)
             AppSnackBar.showInfo(
               ScaffoldMessenger.of(context),
               title: current.extraMessage!,
@@ -83,10 +86,10 @@ class _HomeViewState extends State<HomeView> {
           simpleLogger.d('Khamidjon: State About me inside builder: $state');
 
           AboutMe? aboutMe = null;
-          if (state is AboutMeLoadedFromStorageState) {
+          if (state is _AboutMeLoadedFromStorageState) {
             aboutMe = state.aboutMe;
           }
-          if (state is AboutMeLoadedFromNetworkState) {
+          if (state is _AboutMeLoadedFromNetworkState) {
             aboutMe = state.aboutMe;
           }
 
@@ -118,11 +121,11 @@ class _HomeViewState extends State<HomeView> {
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          TopTitle(),
-                          ImageExperience(pictureLink: aboutMe.pictureLink),
-                          SkillDescription(description: aboutMe.description),
+                          _TopTitle(),
+                          _ImageExperience(pictureLink: aboutMe.pictureLink),
+                          _SkillDescription(description: aboutMe.description),
                           SizedBox(height: 18),
-                          ContactItems(),
+                          _ContactItems(),
                           SizedBox(height: 24),
                         ],
                       ),
