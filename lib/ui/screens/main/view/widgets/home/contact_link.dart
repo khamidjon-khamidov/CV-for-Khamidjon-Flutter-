@@ -22,7 +22,7 @@ class _ContactLink extends StatelessWidget {
           icon: FaIcon(
             icon,
             color: Theme.of(context).colorScheme.secondary,
-            size: 32,
+            size: 24,
           ),
           onPressed: () async => await canLaunch(link) ? await launch(link) : () {},
         ),

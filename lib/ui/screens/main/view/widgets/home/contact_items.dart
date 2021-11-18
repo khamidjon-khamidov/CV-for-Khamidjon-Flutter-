@@ -5,6 +5,7 @@ class _ContactItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double space = 4;
     return Row(
       children: [
         Spacer(),
@@ -13,31 +14,31 @@ class _ContactItems extends StatelessWidget {
           link: 'https://github.com/SomeoneAndNoone',
           icon: FontAwesomeIcons.github,
         ),
-        SizedBox(width: 16),
+        SizedBox(width: space),
         _ContactLink(
           title: 'LinkedIn',
           link: 'https://www.linkedin.com/in/khamidjon-khamidov-a31128194/',
           icon: FontAwesomeIcons.linkedin,
         ),
-        SizedBox(width: 16),
+        SizedBox(width: space),
         _ContactLink(
           title: 'StackOverflow',
           link: 'https://stackoverflow.com/users/11984583/khamidjon-khamidov',
           icon: FontAwesomeIcons.stackOverflow,
         ),
-        SizedBox(width: 16),
+        SizedBox(width: space),
         _ContactLink(
           title: 'Website',
           link: 'https://cvforkhamidjon.herokuapp.com/',
           icon: FontAwesomeIcons.globe,
         ),
-        SizedBox(width: 16),
+        SizedBox(width: space),
         _ContactLink(
           title: 'Facebook',
           link: 'https://www.facebook.com/khamidjon.khamidov',
           icon: FontAwesomeIcons.facebook,
         ),
-        SizedBox(width: 16),
+        SizedBox(width: space),
         _ContactLink(
           title: 'Telegram',
           link: 'http://t.me/work_smard',
