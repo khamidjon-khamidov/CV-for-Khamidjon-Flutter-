@@ -24,4 +24,17 @@ class MainApiProvider extends BaseApiProvider {
       return ServerResponse<AboutMe, ServerErrorResponse>.error(response.error!);
     }
   }
+
+  Future<ServerResponse<String, ServerErrorResponse>> downloadCv(
+      String url, String savePath) async {
+    simpleLogger.d('Khamidjon: REQUEST: downloadCV');
+
+    ServerResponse response = await DOWNLOAD_FILE(url, savePath);
+
+    if (response.isError) {
+      return ServerResponse<String, ServerErrorResponse>.error(response.error);
+    }
+
+    return ServerResponse<String, ServerErrorResponse>.success(response.success);
+  }
 }

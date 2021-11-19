@@ -6,11 +6,14 @@ import 'package:cv_for_khamidjon/domain/providers/storage/aboutme_db_provider.da
 import 'package:cv_for_khamidjon/generated/l10n.dart';
 import 'package:cv_for_khamidjon/utils/server_response.dart';
 import 'package:dio/dio.dart';
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:sembast/sembast.dart';
 
 class MainRepository {
   final AboutMeDbProvider aboutMeDbProvider;
   final MainApiProvider mainApiProvider;
+  String cvFileName = 'CV_Khamidjon_Khamidov';
 
   MainRepository({
     required Dio dio,
@@ -30,6 +33,23 @@ class MainRepository {
       }
     } catch (e) {
       return fetchAboutMeFromDb();
+    }
+  }
+
+  Future<String?> downloadCV(String cvLink) async {
+    String prefix = 'doc';
+    if (cvLink.contains('docx')) {
+      prefix = 'docx';
+    } else if (cvLink.contains('pdf')) {
+      prefix = 'pdf';
+    }
+
+    String fullPath = join((await getTemporaryDirectory()).path, '$cvFileName.$prefix');
+    var response = await mainApiProvider.downloadCv(cvLink, fullPath);
+    if (response.isSuccess) {
+      return response.success;
+    } else {
+      return null;
     }
   }
 

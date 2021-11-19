@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:cv_for_khamidjon/base/database.dart';
 import 'package:cv_for_khamidjon/base/dio_builder.dart';
-import 'package:cv_for_khamidjon/config.dart';
 import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
 import 'package:cv_for_khamidjon/domain/repositories/main_repository.dart';
 import 'package:cv_for_khamidjon/ui/screens/main/home_pages.dart';
@@ -12,7 +11,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:sembast/sembast.dart';
 
 import 'app.dart';
@@ -21,11 +19,6 @@ import 'base/logger.dart';
 void mainCommon() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[DeviceOrientation.portraitUp]);
-
-  // initialize flutter downloader
-  await FlutterDownloader.initialize(
-      debug: Config.isDebugMode // optional: set false to disable printing logs to console
-      );
 
   // load current day night mode and language
   await PreferencesProvider.loadLanToMemoryAndReturn();

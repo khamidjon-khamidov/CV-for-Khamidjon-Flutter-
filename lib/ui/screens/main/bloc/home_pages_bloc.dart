@@ -30,55 +30,36 @@ class HomePagesBloc extends Bloc<_HomePagesEvent, _AboutMeState> {
       transformer: droppable(),
     );
 
-    on<_DownloadCvEvent>((event, emit) async {
-      if (_cvLink == null) {
-        AppSnackBar.showError(
+    on<_DownloadCvEvent>(
+      (event, emit) async {
+        if (_cvLink == null) {
+          AppSnackBar.showError(
+            ScaffoldMessenger.of(event.context),
+            title: "CV link hasn't been loaded yet",
+          );
+          return;
+        }
+
+        AppSnackBar.showInfo(
           ScaffoldMessenger.of(event.context),
-          title: "CV link hasn't been loaded yet",
+          title: S.current.cv_is_being_downloaded,
         );
-        return;
-      }
 
-      if (!(await Permission.storage.request().isGranted)) {
-        return;
-      }
+        String? path = await _mainRepository.downloadCV(_cvLink!);
 
-      // pick folder
-      String? selectedDirectory = await FilePicker.platform.getDirectoryPath();
+        if (path == null || !(await File(path).exists())) {
+          simpleLogger.d('path: $path, isFileExits: ${await File(path ?? '').exists()}');
+          AppSnackBar.showError(
+            ScaffoldMessenger.of(event.context),
+            title: "Sorry, couldn't download CV for some reason!",
+          );
+          return;
+        }
 
-      if (selectedDirectory == null) {
-        AppSnackBar.showError(
-          ScaffoldMessenger.of(event.context),
-          title: "You need to choose a directory to save CV",
-        );
-        return;
-      }
-
-      simpleLogger.d('Khamidjon: selected directory path: $selectedDirectory');
-      var file = Directory(selectedDirectory);
-
-      if (await file.exists()) {
-        var f = File(path.join(file.path, 'Hello.txt'));
-        f.writeAsString('Hello my name is Khamidjon. I am a flutter developer');
-        await f.create();
-        simpleLogger.d('Khamidjon: file exits. path: ${file.path}');
-      } else {
-        simpleLogger.d("Khamidjon: file doesn't exist");
-      }
-
-      AppSnackBar.showInfo(
-        ScaffoldMessenger.of(event.context),
-        title: S.current.cv_is_being_downloaded,
-      );
-
-      // await FlutterDownloader.enqueue(
-      //   url: _cvLink!,
-      //   savedDir: Platform.isAndroid ? selectedDirectory : iosPath,
-      //   showNotification: true, // show download progress in status bar (for Android)
-      //   openFileFromNotification:
-      //       true, // click on notification to open downloaded file (for Android)
-      // );
-    });
+        Share.shareFiles([path], text: 'This is a CV of Khamidjon Khamidov');
+      },
+      transformer: droppable(),
+    );
 
     add(_GetAboutMeEvent());
   }
