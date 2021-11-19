@@ -10,10 +10,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/src/provider.dart';
 
-class AppDrawer extends StatelessWidget {
+class AppDrawer extends StatefulWidget {
   AppDrawer({Key? key}) : super(key: key);
+
+  @override
+  State<AppDrawer> createState() => _AppDrawerState();
+}
+
+class _AppDrawerState extends State<AppDrawer> {
   Color? menuIconColor;
+
   Color? menuNameColor;
+
   @override
   Widget build(BuildContext context) {
     menuIconColor = Theme.of(context).colorScheme.secondary;
