@@ -16,7 +16,7 @@ class AppDrawer extends StatelessWidget {
   Color? menuNameColor;
   @override
   Widget build(BuildContext context) {
-    menuIconColor = Theme.of(context).primaryColor;
+    menuIconColor = Theme.of(context).colorScheme.secondary;
     menuNameColor = Theme.of(context).textTheme.headline1!.color!;
 
     return Drawer(
