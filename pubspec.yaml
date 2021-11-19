@@ -10,19 +10,30 @@ dependencies:
   bloc: ^7.2.1
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.3.3
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
+
+  # util
+  encrypt: ^5.0.1
   supercharged: ^2.1.1
-  google_fonts: ^2.1.0
   logger: ^1.1.0
-  rxdart: ^0.27.2
-  bloc_concurrency: ^0.1.0
+  equatable: ^2.0.3
+
+  # ui
+  flutter_screenutil: ^5.0.0+2
   pull_to_refresh: ^2.0.0
+  google_fonts: ^2.1.0
+
+  # bloc
+  flutter_bloc: ^7.3.3
+  bloc_concurrency: ^0.1.0
+  rxdart: ^0.27.2
+
+  #database
+  sembast: ^3.1.1
 
   # path provider
-  sembast: ^3.1.1
   path_provider: ^2.0.6
   path: ^1.8.0
   shared_preferences: ^2.0.8
@@ -33,11 +44,8 @@ dependencies:
   dio: ^4.0.1
   connectivity_plus: ^2.0.2
   url_launcher: ^6.0.12
-
-  equatable: ^2.0.3
-  json_serializable: ^6.0.1
   json_annotation: ^4.3.0
-  encrypt: ^5.0.1
+  json_serializable: ^6.0.1
 
   #image
   cached_network_image: ^3.1.0+1

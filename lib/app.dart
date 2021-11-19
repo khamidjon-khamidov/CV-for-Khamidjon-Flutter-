@@ -5,6 +5,7 @@ import 'package:cv_for_khamidjon/utils/app_settings_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'base/connection_observer.dart';
@@ -19,7 +20,6 @@ class App extends StatelessWidget {
 
   App({
     Key? key,
-    // required this.appDirectory,
   }) : super(key: key) {
     // observe network connection
     ConnectionObserver.onChanged.listen((hasConnection) {
@@ -40,29 +40,33 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AppSettingsCubit(),
-      child: BlocBuilder<AppSettingsCubit, AppSettings>(builder: (context, settings) {
-        return MaterialApp(
-          theme: AppThemes.lightTheme,
-          darkTheme: AppThemes.darkTheme,
-          themeMode: settings.themeMode,
-          debugShowCheckedModeBanner: false,
-          navigatorObservers: [
-            AppNavigatorObserver(),
-          ],
-          locale: settings.language,
-          localizationsDelegates: const [
-            S.delegate,
-            RefreshLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
-          home: const HomePage(),
-        );
-      }),
-    );
+    return ScreenUtilInit(
+        designSize: Size(360, 690),
+        builder: () {
+          return BlocProvider(
+            create: (context) => AppSettingsCubit(),
+            child: BlocBuilder<AppSettingsCubit, AppSettings>(builder: (context, settings) {
+              return MaterialApp(
+                theme: AppThemes.lightTheme,
+                darkTheme: AppThemes.darkTheme,
+                themeMode: settings.themeMode,
+                debugShowCheckedModeBanner: false,
+                navigatorObservers: [
+                  AppNavigatorObserver(),
+                ],
+                locale: settings.language,
+                localizationsDelegates: const [
+                  S.delegate,
+                  RefreshLocalizations.delegate,
+                  GlobalMaterialLocalizations.delegate,
+                  GlobalWidgetsLocalizations.delegate,
+                  GlobalCupertinoLocalizations.delegate,
+                ],
+                supportedLocales: S.delegate.supportedLocales,
+                home: const HomePage(),
+              );
+            }),
+          );
+        });
   }
 }
