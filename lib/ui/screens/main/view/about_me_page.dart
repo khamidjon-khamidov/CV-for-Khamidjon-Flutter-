@@ -89,9 +89,9 @@ class _AboutMeViewState extends State<_AboutMeView> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                    top: 12,
-                    left: 12,
-                    right: 12,
+                    top: 12.h,
+                    left: 12.w,
+                    right: 12.w,
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -99,10 +99,11 @@ class _AboutMeViewState extends State<_AboutMeView> {
                     children: [
                       _MyIntro(),
                       _ExperienceText(),
-                      SizedBox(height: 30),
+                      SizedBox(height: 30.h),
                       _Details(aboutMe: aboutMe),
-                      SizedBox(height: 30),
+                      SizedBox(height: 30.h),
                       _MyInterests(),
+                      SizedBox(height: 30.h),
                     ],
                   ),
                 ),

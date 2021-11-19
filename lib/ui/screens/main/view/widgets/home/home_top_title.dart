@@ -8,22 +8,22 @@ class _TopTitle extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        SizedBox(height: 20),
+        SizedBox(height: 20.h),
         Center(
           child: Text(
             S.current.hiI_am,
             style: TextStyle(
-              fontSize: 18,
+              fontSize: 18.sp,
               color: Theme.of(context).textTheme.headline5!.color!,
             ),
           ),
         ),
-        SizedBox(height: 15),
+        SizedBox(height: 15.h),
         Center(
           child: Text(
             S.current.my_name,
             style: GoogleFonts.aBeeZee().copyWith(
-              fontSize: 24,
+              fontSize: 24.sp,
               color: Theme.of(context).colorScheme.secondary,
             ),
           ),

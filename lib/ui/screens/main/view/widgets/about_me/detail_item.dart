@@ -20,7 +20,7 @@ class _DetailItem extends StatelessWidget {
           icon: FaIcon(
             icon,
             color: Theme.of(context).colorScheme.secondary,
-            size: 24,
+            size: 20.r,
           ),
           onPressed: () {},
         ),
@@ -28,13 +28,13 @@ class _DetailItem extends StatelessWidget {
           '$title:    ',
           style: TextStyle(
             color: Theme.of(context).splashColor,
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
+            fontWeight: FontWeight.w500,
+            fontSize: 18.sp,
           ),
         ),
         Text(
           detail,
-          style: TextStyle(fontSize: 18),
+          style: TextStyle(fontSize: 18.sp),
         ),
       ],
     );

@@ -13,18 +13,19 @@ class _SkillDescription extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        SizedBox(height: 24),
+        SizedBox(height: 24.h),
         Text(
           S.current.flutter_developer,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Theme.of(context).colorScheme.secondary,
-            fontSize: 24,
+            fontSize: 24.sp,
           ),
         ),
-        SizedBox(height: 12),
+        SizedBox(height: 12.h),
         Container(
-          width: 450,
+          padding: EdgeInsets.symmetric(horizontal: 14.w),
+          width: 450.w,
           child: Text(
             description,
             textAlign: TextAlign.center,

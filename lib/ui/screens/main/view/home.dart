@@ -38,7 +38,7 @@ class _HomeViewState extends State<HomeView> {
               context.read<HomePagesBloc>().downloadCV(context);
             },
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 8.w),
               child: ColorFiltered(
                 colorFilter: ColorFilter.mode(
                   Theme.of(context).colorScheme.secondary,
@@ -46,7 +46,7 @@ class _HomeViewState extends State<HomeView> {
                 ),
                 child: Image.asset(
                   AppImages.cv,
-                  width: 30,
+                  width: 26.w,
                 ),
               ),
             ),
@@ -113,7 +113,7 @@ class _HomeViewState extends State<HomeView> {
             child: ListView(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(12),
+                  padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
                   child: InkWell(
                     onTap: () {},
                     child: Container(
@@ -124,9 +124,9 @@ class _HomeViewState extends State<HomeView> {
                           _TopTitle(),
                           _ImageExperience(pictureLink: aboutMe.pictureLink),
                           _SkillDescription(description: aboutMe.description),
-                          SizedBox(height: 18),
+                          SizedBox(height: 18.h),
                           _ContactItems(),
-                          SizedBox(height: 24),
+                          SizedBox(height: 24.h),
                         ],
                       ),
                     ),

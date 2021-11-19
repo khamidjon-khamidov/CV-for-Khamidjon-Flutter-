@@ -5,7 +5,7 @@ class _ContactItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double space = 4;
+    double space = 4.h;
     return Row(
       children: [
         Spacer(),

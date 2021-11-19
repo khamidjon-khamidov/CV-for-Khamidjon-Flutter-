@@ -9,10 +9,8 @@ class _ImageExperience extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-
     return Container(
-      height: 600,
+      height: 600.h,
       child: Stack(
         children: [
           Positioned(
@@ -20,7 +18,7 @@ class _ImageExperience extends StatelessWidget {
             left: 0,
             right: 0,
             child: Container(
-              height: 550,
+              height: 550.h,
               child: CachedNetworkImage(
                 imageUrl: pictureLink,
                 placeholder: (_, __) {
@@ -38,14 +36,14 @@ class _ImageExperience extends StatelessWidget {
                 Spacer(),
                 Card(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(55),
+                    borderRadius: BorderRadius.circular(55.r),
                   ),
                   // color: Theme.of(context).scaffoldBackgroundColor,
                   elevation: 10,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 12,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 30.w,
+                      vertical: 12.h,
                     ),
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -54,14 +52,15 @@ class _ImageExperience extends StatelessWidget {
                         _Experience(
                           path: AppImages.mobileDevelopment,
                           title: S.current.mobile_development,
-                          padding: 10,
+                          paddingHorizontal: 10.w,
+                          paddingVertical: 10.h,
                         ),
-                        SizedBox(width: 30),
+                        SizedBox(width: 30.w),
                         _Experience(
                           path: AppImages.algorithms,
                           title: S.current.algorithms_cc,
                         ),
-                        SizedBox(width: 30),
+                        SizedBox(width: 30.w),
                         _Experience(
                           path: AppImages.webDevelopment,
                           title: S.current.web_development,

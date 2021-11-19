@@ -13,18 +13,18 @@ class _MyIntro extends StatelessWidget {
           S.current.my_intro,
           style: TextStyle(
             color: Theme.of(context).colorScheme.secondary,
-            fontSize: 24,
+            fontSize: 24.sp,
           ),
         ),
-        SizedBox(height: 12),
+        SizedBox(height: 12.h),
         Text(
           S.current.experience_description,
           style: TextStyle(
-            color: Theme.of(context).textTheme.headline4!.color!,
-            fontSize: 16,
+            color: Theme.of(context).textTheme.headline5!.color!,
+            fontSize: 16.sp,
           ),
         ),
-        SizedBox(height: 16),
+        SizedBox(height: 16.h),
       ],
     );
   }

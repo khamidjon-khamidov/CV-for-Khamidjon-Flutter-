@@ -1,34 +1,29 @@
 part of home_pages;
 
-class _ContactLink extends StatelessWidget {
+class _Interest extends StatelessWidget {
   final String title;
-  final String link;
   final IconData icon;
-
-  _ContactLink({
+  _Interest({
     required this.title,
-    required this.link,
     required this.icon,
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
+    return Row(
       children: [
         IconButton(
-          // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
           icon: FaIcon(
             icon,
             color: Theme.of(context).colorScheme.secondary,
-            size: 24.w,
+            size: 18.r,
           ),
-          onPressed: () async => await canLaunch(link) ? await launch(link) : () {},
+          onPressed: null,
         ),
         Text(
           title,
-          style: TextStyle(fontSize: 12.sp),
+          style: TextStyle(fontSize: 16.sp),
         ),
       ],
     );

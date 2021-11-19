@@ -13,18 +13,18 @@ class _ExperienceText extends StatelessWidget {
           S.current.development_experience,
           style: TextStyle(
             color: Theme.of(context).colorScheme.secondary,
-            fontSize: 18,
+            fontSize: 18.sp,
           ),
         ),
-        SizedBox(height: 12),
+        SizedBox(height: 12.h),
         Padding(
-          padding: EdgeInsets.only(left: 18.0),
+          padding: EdgeInsets.only(left: 18.w),
           child: Text(
             S.current.experience_details,
             style: TextStyle(
-              height: 1.5,
-              color: Theme.of(context).textTheme.headline4!.color!,
-              fontSize: 16,
+              height: 1.5.h,
+              color: Theme.of(context).textTheme.headline1!.color!,
+              fontSize: 16.sp,
             ),
           ),
         ),

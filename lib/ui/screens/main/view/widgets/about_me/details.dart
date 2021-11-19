@@ -18,10 +18,10 @@ class _Details extends StatelessWidget {
           S.of(context).personal_details,
           style: TextStyle(
             color: Theme.of(context).colorScheme.secondary,
-            fontSize: 18,
+            fontSize: 18.sp,
           ),
         ),
-        SizedBox(height: 12),
+        SizedBox(height: 12.h),
         _DetailItem(
           title: S.of(context).name,
           detail: S.current.my_name,
@@ -45,7 +45,7 @@ class _Details extends StatelessWidget {
         _DetailItem(
           title: S.of(context).experience,
           detail: S.of(context).experience_start_date,
-          icon: FontAwesomeIcons.graduationCap,
+          icon: FontAwesomeIcons.briefcase,
         ),
       ],
     );

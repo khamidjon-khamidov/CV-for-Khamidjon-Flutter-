@@ -7,6 +7,7 @@ import 'package:cv_for_khamidjon/ui/components/theme_mode_changer.dart';
 import 'package:cv_for_khamidjon/ui/theme/images.dart';
 import 'package:cv_for_khamidjon/utils/app_settings_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/src/provider.dart';
 
 class AppDrawer extends StatelessWidget {
@@ -114,13 +115,13 @@ class AppDrawer extends StatelessWidget {
             children: <Widget>[
               Spacer(flex: 1),
               Container(
-                padding: EdgeInsets.all(2),
+                padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 2.h),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Theme.of(context).colorScheme.secondary,
                 ),
                 child: CircleAvatar(
-                  radius: 50,
+                  radius: 40.r,
                   backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                   backgroundImage: AssetImage(AppImages.myPicture3x4),
                 ),
@@ -130,7 +131,7 @@ class AppDrawer extends StatelessWidget {
                 S.current.my_name,
                 style: TextStyle(
                     color: Theme.of(context).colorScheme.secondary,
-                    fontSize: 20.0,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.w500),
               ),
               Spacer(flex: 1),

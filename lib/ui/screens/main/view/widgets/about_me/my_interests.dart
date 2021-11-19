@@ -13,62 +13,28 @@ class _MyInterests extends StatelessWidget {
           S.of(context).my_interests,
           style: TextStyle(
             color: Theme.of(context).colorScheme.secondary,
-            fontSize: 18,
+            fontSize: 18.sp,
           ),
         ),
-        SizedBox(height: 12),
+        SizedBox(height: 12.h),
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            IconButton(
-              icon: FaIcon(
-                FontAwesomeIcons.chess,
-                color: Theme.of(context).colorScheme.secondary,
-                size: 24,
-              ),
-              onPressed: () {},
+            _Interest(
+              title: S.current.chess,
+              icon: FontAwesomeIcons.chess,
             ),
-            Text(
-              S.of(context).chess,
-              style: TextStyle(fontSize: 20),
+            _Interest(
+              title: S.current.travel,
+              icon: FontAwesomeIcons.map,
             ),
-            SizedBox(width: 12),
-            IconButton(
-              icon: FaIcon(
-                FontAwesomeIcons.map,
-                color: Theme.of(context).colorScheme.secondary,
-                size: 24,
-              ),
-              onPressed: () {},
+            _Interest(
+              title: S.current.film,
+              icon: FontAwesomeIcons.film,
             ),
-            Text(
-              S.of(context).travel,
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(width: 12),
-            IconButton(
-              icon: FaIcon(
-                FontAwesomeIcons.film,
-                color: Theme.of(context).colorScheme.secondary,
-                size: 24,
-              ),
-              onPressed: () {},
-            ),
-            Text(
-              S.of(context).film,
-              style: TextStyle(fontSize: 20),
-            ),
-            SizedBox(width: 12),
-            IconButton(
-              icon: FaIcon(
-                FontAwesomeIcons.music,
-                color: Theme.of(context).colorScheme.secondary,
-                size: 24,
-              ),
-              onPressed: () {},
-            ),
-            Text(
-              S.of(context).music,
-              style: TextStyle(fontSize: 20),
+            _Interest(
+              title: S.current.music,
+              icon: FontAwesomeIcons.music,
             ),
           ],
         )
