@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:cv_for_khamidjon/base/logger.dart';
-import 'package:cv_for_khamidjon/domain/models/ServerErrorResponse.dart';
+import 'package:cv_for_khamidjon/domain/models/server_error_response.dart';
 import 'package:cv_for_khamidjon/utils/server_response.dart';
 import 'package:dio/dio.dart';
 
@@ -48,16 +48,16 @@ abstract class BaseApiProvider {
     }
   }
 
-  Future<ServerResponse<T, ServerErrorResponse>> _sendAndParse<T>(
+  Future<ServerResponse<List<T>, ServerErrorResponse>> _sendAndParse<T>(
       final Future<Response<dynamic>> request) async {
     Response response = await request;
     if (response.statusCode == 200) {
       simpleLogger.d('Received success response: ${response.data}');
-      return ServerResponse<T, ServerErrorResponse>.success(response.data[0]);
+      return ServerResponse<List<T>, ServerErrorResponse>.success(response.data);
     } else {
       simpleLogger
           .d('Request failed. Response: ${response.toString()}, Request: ${request.toString()}');
-      return ServerResponse<T, ServerErrorResponse>.error(ServerErrorResponse(
+      return ServerResponse<List<T>, ServerErrorResponse>.error(ServerErrorResponse(
           response.statusCode ?? -1, response.statusMessage ?? 'Error without response.'));
     }
   }

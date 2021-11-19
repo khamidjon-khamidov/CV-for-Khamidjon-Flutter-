@@ -1,7 +1,7 @@
 import 'package:cv_for_khamidjon/base/base_api_provider.dart';
 import 'package:cv_for_khamidjon/base/logger.dart';
-import 'package:cv_for_khamidjon/domain/models/ServerErrorResponse.dart';
 import 'package:cv_for_khamidjon/domain/models/main_pages/about_me.dart';
+import 'package:cv_for_khamidjon/domain/models/server_error_response.dart';
 import 'package:cv_for_khamidjon/utils/constants.dart';
 import 'package:cv_for_khamidjon/utils/server_response.dart';
 import 'package:dio/src/dio.dart';
@@ -17,8 +17,8 @@ class MainApiProvider extends BaseApiProvider {
       return ServerResponse<AboutMe, ServerErrorResponse>.error(response.error!);
     }
     try {
-      AboutMe aboutMe = AboutMe.fromJson(response.success!);
-      return ServerResponse<AboutMe, ServerErrorResponse>.success(aboutMe);
+      List<AboutMe> aboutMes = response.success!.map((map) => AboutMe.fromJson(map)).toList();
+      return ServerResponse<AboutMe, ServerErrorResponse>.success(aboutMes[0]);
     } catch (e) {
       simpleLogger.d('Failed parsing response: ${response.success}');
       return ServerResponse<AboutMe, ServerErrorResponse>.error(response.error!);

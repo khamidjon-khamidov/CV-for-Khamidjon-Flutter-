@@ -1,6 +1,6 @@
-import 'package:cv_for_khamidjon/domain/models/ServerErrorResponse.dart';
 import 'package:cv_for_khamidjon/domain/models/bloc_response.dart';
 import 'package:cv_for_khamidjon/domain/models/main_pages/about_me.dart';
+import 'package:cv_for_khamidjon/domain/models/server_error_response.dart';
 import 'package:cv_for_khamidjon/domain/providers/api/main_api_provider.dart';
 import 'package:cv_for_khamidjon/domain/providers/storage/aboutme_db_provider.dart';
 import 'package:cv_for_khamidjon/generated/l10n.dart';

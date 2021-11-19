@@ -9,11 +9,6 @@ class AboutMeDbProvider {
 
   AboutMeDbProvider(this._db);
 
-  Stream<List<AboutMe>> observeGallery() => _store
-      .query()
-      .onSnapshots(_db)
-      .map((list) => list.map((aboutMeJson) => AboutMe.fromJson(aboutMeJson.value)).toList());
-
   Future putByReplacing(AboutMe aboutMe) async {
     await _db.transaction(
       (txn) async {
