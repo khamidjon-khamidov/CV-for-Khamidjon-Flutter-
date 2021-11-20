@@ -19,7 +19,7 @@ class HomePagesBloc extends Bloc<_HomePagesEvent, _AboutMeState> {
           emit(_AboutMeLoadedFromStorageState(blockResponse.data,
               extraMessage: blockResponse.extraMessage));
         } else if (blockResponse is ErrorBlockResponse) {
-          emit(_AboutMeErrorState(blockResponse.extraMessage!));
+          emit(_HomePagesErrorState(blockResponse.extraMessage!));
         }
       },
       transformer: droppable(),

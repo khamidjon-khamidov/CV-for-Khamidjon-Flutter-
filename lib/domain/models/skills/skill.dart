@@ -5,7 +5,6 @@ part 'skill.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class Skill implements Equatable {
-  @JsonKey(name: 'skillId')
   final String id;
   final String name;
   final int percentage;

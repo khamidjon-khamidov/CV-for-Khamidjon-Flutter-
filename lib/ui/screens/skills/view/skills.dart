@@ -5,12 +5,83 @@ class SkillsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return SkillsView();
+  }
+}
+
+class SkillsView extends StatefulWidget {
+  const SkillsView({Key? key}) : super(key: key);
+
+  @override
+  _SkillsViewState createState() => _SkillsViewState();
+}
+
+class _SkillsViewState extends State<SkillsView> {
+  RefreshController _refreshController = RefreshController(initialRefresh: false);
+
+  void _onRefresh() async => context.read<SkillsBloc>().add(_GetSkillsEvent());
+
+  @override
+  void initState() {
+    context.read<SkillsBloc>().stream.listen((state) {
+      if (state is _SkillsErrorState) {
+        AppSnackBar.showError(
+          ScaffoldMessenger.of(context),
+          iconData: Icons.done,
+          title: state.extraMessage,
+        );
+      } else if (state.extraMessage != null) {
+        AppSnackBar.showInfo(
+          ScaffoldMessenger.of(context),
+          title: state.extraMessage!,
+        );
+      }
+    });
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(S.current.page_skills),
       ),
       drawer: AppDrawer(),
-      body: Container(),
+      body: BlocBuilder<SkillsBloc, _SkillsState>(
+        buildWhen: (prev, current) {
+          if (current is _SkillsLoadedFromStorageState ||
+              current is _SkillsLoadedFromNetworkState) {
+            _refreshController.refreshCompleted();
+          } else if (current is _SkillsErrorState) {
+            _refreshController.refreshFailed();
+            return false;
+          } else if (current is _SkillsLoadingState) {
+            _refreshController.requestRefresh();
+            return false;
+          }
+          return true;
+        },
+        builder: (context, state) {
+          List<Skill> skills = [];
+          if (state is _SkillsLoadedFromNetworkState) {
+            skills = state.skills;
+          }
+
+          if (state is _SkillsLoadedFromStorageState) {
+            skills = state.skills;
+          }
+
+          return SmartRefresher(
+            enablePullDown: true,
+            header: WaterDropMaterialHeader(),
+            controller: _refreshController,
+            onRefresh: _onRefresh,
+            child: Container(
+              child: Text('${skills.map((e) => e.toString())}'),
+            ),
+          );
+        },
+      ),
     );
   }
 }

@@ -20,6 +20,25 @@ class _HomeViewState extends State<HomeView> {
   RefreshController _refreshController = RefreshController(initialRefresh: false);
   String? cvLink;
 
+  @override
+  void initState() {
+    context.read<HomePagesBloc>().stream.listen((state) {
+      if (state is _HomePagesErrorState) {
+        AppSnackBar.showError(
+          ScaffoldMessenger.of(context),
+          iconData: Icons.done,
+          title: state.extraMessage,
+        );
+      } else if (state.extraMessage != null) {
+        AppSnackBar.showInfo(
+          ScaffoldMessenger.of(context),
+          title: state.extraMessage!,
+        );
+      }
+    });
+    super.initState();
+  }
+
   void _onRefresh() async {
     context.read<HomePagesBloc>().add(_GetAboutMeEvent());
     simpleLogger.d('About me: SimpleRefresh: _onRefresh()');
@@ -60,31 +79,17 @@ class _HomeViewState extends State<HomeView> {
           if (current is _AboutMeLoadedFromNetworkState ||
               current is _AboutMeLoadedFromStorageState) {
             _refreshController.refreshCompleted();
-          }
-          if (current is _AboutMeErrorState) {
+          } else if (current is _HomePagesErrorState) {
             _refreshController.refreshFailed();
-            AppSnackBar.showError(
-              ScaffoldMessenger.of(context),
-              iconData: Icons.done,
-              title: current.extraMessage,
-            );
             return false;
           } else if (current is _AboutMeLoadingState) {
-            simpleLogger.d('inside about me loading state');
             _refreshController.requestRefresh();
             return false;
           }
-          if (!(current is _AboutMeErrorState) && current.extraMessage != null)
-            AppSnackBar.showInfo(
-              ScaffoldMessenger.of(context),
-              title: current.extraMessage!,
-            );
 
           return true;
         },
         builder: (context, state) {
-          simpleLogger.d('Khamidjon: State About me inside builder: $state');
-
           AboutMe? aboutMe = null;
           if (state is _AboutMeLoadedFromStorageState) {
             aboutMe = state.aboutMe;

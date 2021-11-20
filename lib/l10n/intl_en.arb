@@ -41,5 +41,6 @@
   "film": "Film",
   "travel": "Travel",
   "chess": "Chess",
-  "cv_is_being_downloaded": "CV is being downloaded"
+  "cv_is_being_downloaded": "CV is being downloaded",
+  "unexpected_error_occurred": "Unexpected error occurred"
 }

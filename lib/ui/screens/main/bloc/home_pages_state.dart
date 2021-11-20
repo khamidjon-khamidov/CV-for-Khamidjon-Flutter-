@@ -33,8 +33,8 @@ class _AboutMeLoadedFromNetworkState extends _AboutMeState {
   List<Object?> get props => [aboutMe, extraMessage];
 }
 
-class _AboutMeErrorState extends _AboutMeState {
-  _AboutMeErrorState(String extraMessage) : super(extraMessage: extraMessage);
+class _HomePagesErrorState extends _AboutMeState {
+  _HomePagesErrorState(String extraMessage) : super(extraMessage: extraMessage);
 
   @override
   List<Object?> get props => [extraMessage];

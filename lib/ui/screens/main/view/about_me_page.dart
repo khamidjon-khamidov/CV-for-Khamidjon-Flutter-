@@ -38,7 +38,7 @@ class _AboutMeViewState extends State<_AboutMeView> {
               current is _AboutMeLoadedFromStorageState) {
             _refreshController.refreshCompleted();
           }
-          if (current is _AboutMeErrorState) {
+          if (current is _HomePagesErrorState) {
             _refreshController.refreshFailed();
             AppSnackBar.showError(
               ScaffoldMessenger.of(context),
@@ -51,7 +51,7 @@ class _AboutMeViewState extends State<_AboutMeView> {
             _refreshController.requestRefresh();
             return false;
           }
-          if (!(current is _AboutMeErrorState) && current.extraMessage != null)
+          if (!(current is _HomePagesErrorState) && current.extraMessage != null)
             AppSnackBar.showInfo(
               ScaffoldMessenger.of(context),
               title: current.extraMessage!,

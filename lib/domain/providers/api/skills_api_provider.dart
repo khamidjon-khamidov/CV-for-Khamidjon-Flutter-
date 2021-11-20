@@ -17,11 +17,17 @@ class SkillsApiProvider extends BaseApiProvider {
       return ServerResponse<List<Skill>, ServerErrorResponse>.error(response.error!);
     }
     try {
-      List<Skill> skills = response.success!.map((map) => Skill.fromJson(map)).toList();
+      List<Skill> skills =
+          (response.success! as List<dynamic>).map((map) => Skill.fromJson(map)).toList();
       return ServerResponse<List<Skill>, ServerErrorResponse>.success(skills);
     } catch (e) {
-      simpleLogger.d('Failed parsing response: ${response.success}');
-      return ServerResponse<List<Skill>, ServerErrorResponse>.error(response.error!);
+      logger.e(e);
+      return ServerResponse<List<Skill>, ServerErrorResponse>.error(
+        ServerErrorResponse(
+          0,
+          S.current.unexpected_error_occurred,
+        ),
+      );
     }
   }
 }

@@ -79,6 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "some_error": MessageLookupByLibrary.simpleMessage("Some error!"),
         "success": MessageLookupByLibrary.simpleMessage("Success"),
         "travel": MessageLookupByLibrary.simpleMessage("Travel"),
+        "unexpected_error_occurred":
+            MessageLookupByLibrary.simpleMessage("Unexpected error occurred"),
         "warning": MessageLookupByLibrary.simpleMessage("Warning!"),
         "web_development":
             MessageLookupByLibrary.simpleMessage("Web\nDevelopment"),

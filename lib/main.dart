@@ -4,7 +4,9 @@ import 'package:cv_for_khamidjon/base/database.dart';
 import 'package:cv_for_khamidjon/base/dio_builder.dart';
 import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
 import 'package:cv_for_khamidjon/domain/repositories/main_repository.dart';
+import 'package:cv_for_khamidjon/domain/repositories/skills_repository.dart';
 import 'package:cv_for_khamidjon/ui/screens/main/home_pages.dart';
+import 'package:cv_for_khamidjon/ui/screens/skills/skills_page.dart';
 import 'package:cv_for_khamidjon/utils/app_level_variables.dart';
 import 'package:cv_for_khamidjon/utils/app_settings_cubit.dart';
 import 'package:flutter/foundation.dart';
@@ -41,7 +43,13 @@ void mainCommon() async {
               dio: DioBuilder.dio,
               database: appDatabase,
             ),
-          )
+          ),
+          RepositoryProvider<SkillsRepository>(
+            create: (context) => SkillsRepository(
+              dio: DioBuilder.dio,
+              database: appDatabase,
+            ),
+          ),
         ],
         child: MultiBlocProvider(
           providers: [
@@ -50,6 +58,9 @@ void mainCommon() async {
             ),
             BlocProvider<AppSettingsCubit>(
               create: (context) => AppSettingsCubit(),
+            ),
+            BlocProvider<SkillsBloc>(
+              create: (context) => SkillsBloc(context.read<SkillsRepository>()),
             )
           ],
           child: App(),
