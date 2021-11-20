@@ -7,4 +7,8 @@ extension ColorSchemeExtension on ColorScheme {
 
   Color get success =>
       this.brightness == Brightness.light ? AppColors.greenSuccess : AppColors.greenSuccess;
+
+  Color get mediumEmphasisTextDark => this.brightness == Brightness.light
+      ? AppColors.mediumEmphasisTextDark
+      : AppColors.mediumEmphasisTextDark;
 }

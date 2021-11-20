@@ -36,7 +36,14 @@ class _SkillItem extends StatelessWidget {
               key: Key('percentage widget: ${skill.id}:${isAnimatable}'),
             ),
             SizedBox(height: 20.h),
-            SizedBox(height: 80.h),
+            _SkillDescription(
+              skill.descriptions,
+              isAnimatable,
+              key: Key(
+                'description widget: ${skill.id}:${isAnimatable}',
+              ),
+            ),
+            SizedBox(height: 16.h),
           ],
         ),
       ),
