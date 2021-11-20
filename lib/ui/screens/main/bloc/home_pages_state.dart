@@ -20,7 +20,7 @@ class _AboutMeLoadedFromStorageState extends _AboutMeState {
       : super(extraMessage: extraMessage);
 
   @override
-  List<Object?> get props => [aboutMe];
+  List<Object?> get props => [aboutMe, extraMessage];
 }
 
 class _AboutMeLoadedFromNetworkState extends _AboutMeState {
@@ -30,7 +30,7 @@ class _AboutMeLoadedFromNetworkState extends _AboutMeState {
       : super(extraMessage: extraMessage);
 
   @override
-  List<Object?> get props => [aboutMe];
+  List<Object?> get props => [aboutMe, extraMessage];
 }
 
 class _AboutMeErrorState extends _AboutMeState {

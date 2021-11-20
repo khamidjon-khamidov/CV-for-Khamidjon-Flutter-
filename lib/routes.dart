@@ -3,9 +3,10 @@ import 'package:cv_for_khamidjon/ui/screens/app_details/view/app_details.dart';
 import 'package:cv_for_khamidjon/ui/screens/main/home_pages.dart';
 import 'package:cv_for_khamidjon/ui/screens/posts/view/posts.dart';
 import 'package:cv_for_khamidjon/ui/screens/projects/view/projects.dart';
-import 'package:cv_for_khamidjon/ui/screens/skills/view/skills.dart';
 import 'package:cv_for_khamidjon/utils/page_transitions.dart';
 import 'package:flutter/material.dart';
+
+import 'ui/screens/skills/skills_page.dart';
 
 class AppRouteSettings {
   static void goToHomePage(BuildContext context) {

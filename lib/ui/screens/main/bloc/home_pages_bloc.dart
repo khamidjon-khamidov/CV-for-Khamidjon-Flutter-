@@ -9,22 +9,17 @@ class HomePagesBloc extends Bloc<_HomePagesEvent, _AboutMeState> {
       (event, emit) async {
         emit(_AboutMeLoadingState());
 
-        try {
-          BlocResponse blockResponse = await _mainRepository.getAboutMe();
-          if (blockResponse is FromNetworkBlocResponse) {
-            _cvLink = (blockResponse.data as AboutMe).cvLink;
-            emit(_AboutMeLoadedFromNetworkState(blockResponse.data,
-                extraMessage: blockResponse.extraMessage));
-          } else if (blockResponse is FromStorageBlockResponse) {
-            _cvLink = (blockResponse.data as AboutMe).cvLink;
-            emit(_AboutMeLoadedFromStorageState(blockResponse.data,
-                extraMessage: blockResponse.extraMessage));
-          } else if (blockResponse is ErrorBlockResponse) {
-            emit(_AboutMeErrorState(blockResponse.extraMessage!));
-          }
-        } catch (e) {
-          logger.e(e, e);
-          emit(_AboutMeErrorState('Unknown error'));
+        BlocResponse blockResponse = await _mainRepository.getAboutMe();
+        if (blockResponse is FromNetworkBlocResponse) {
+          _cvLink = (blockResponse.data as AboutMe).cvLink;
+          emit(_AboutMeLoadedFromNetworkState(blockResponse.data,
+              extraMessage: blockResponse.extraMessage));
+        } else if (blockResponse is FromStorageBlockResponse) {
+          _cvLink = (blockResponse.data as AboutMe).cvLink;
+          emit(_AboutMeLoadedFromStorageState(blockResponse.data,
+              extraMessage: blockResponse.extraMessage));
+        } else if (blockResponse is ErrorBlockResponse) {
+          emit(_AboutMeErrorState(blockResponse.extraMessage!));
         }
       },
       transformer: droppable(),

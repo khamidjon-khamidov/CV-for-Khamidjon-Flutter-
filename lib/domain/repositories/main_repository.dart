@@ -1,3 +1,4 @@
+import 'package:cv_for_khamidjon/base/logger.dart';
 import 'package:cv_for_khamidjon/domain/models/bloc_response.dart';
 import 'package:cv_for_khamidjon/domain/models/main_pages/about_me.dart';
 import 'package:cv_for_khamidjon/domain/models/server_error_response.dart';
@@ -11,27 +12,28 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sembast/sembast.dart';
 
 class MainRepository {
-  final AboutMeDbProvider aboutMeDbProvider;
-  final MainApiProvider mainApiProvider;
+  final AboutMeDbProvider _aboutMeDbProvider;
+  final MainApiProvider _mainApiProvider;
   String cvFileName = 'CV_Khamidjon_Khamidov';
 
   MainRepository({
     required Dio dio,
     required Database database,
-  })  : aboutMeDbProvider = AboutMeDbProvider(database),
-        mainApiProvider = MainApiProvider(dio);
+  })  : _aboutMeDbProvider = AboutMeDbProvider(database),
+        _mainApiProvider = MainApiProvider(dio);
 
   Future<BlocResponse> getAboutMe() async {
     try {
-      ServerResponse<AboutMe, ServerErrorResponse> response = await mainApiProvider.getAboutMe();
+      ServerResponse<AboutMe, ServerErrorResponse> response = await _mainApiProvider.getAboutMe();
       if (response.isSuccess) {
-        await aboutMeDbProvider.putByReplacing(response.success!);
+        await _aboutMeDbProvider.putByReplacing(response.success!);
         return FromNetworkBlocResponse(response.success!,
             extraMessage: S.current.data_received_successfully);
       } else {
         return fetchAboutMeFromDb();
       }
     } catch (e) {
+      logger.e(e);
       return fetchAboutMeFromDb();
     }
   }
@@ -45,7 +47,7 @@ class MainRepository {
     }
 
     String fullPath = join((await getTemporaryDirectory()).path, '$cvFileName.$prefix');
-    var response = await mainApiProvider.downloadCv(cvLink, fullPath);
+    var response = await _mainApiProvider.downloadCv(cvLink, fullPath);
     if (response.isSuccess) {
       return response.success;
     } else {
@@ -54,7 +56,7 @@ class MainRepository {
   }
 
   Future<BlocResponse> fetchAboutMeFromDb() async {
-    AboutMe? aboutMe = await aboutMeDbProvider.read();
+    AboutMe? aboutMe = await _aboutMeDbProvider.read();
     if (aboutMe != null) {
       return FromStorageBlockResponse(aboutMe,
           extraMessage: S.current.data_got_from_storage_due_to_network_error);

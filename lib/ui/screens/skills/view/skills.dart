@@ -1,6 +1,4 @@
-import 'package:cv_for_khamidjon/generated/l10n.dart';
-import 'package:cv_for_khamidjon/ui/components/app_drawer.dart';
-import 'package:flutter/material.dart';
+part of skills_page;
 
 class SkillsPage extends StatelessWidget {
   const SkillsPage({Key? key}) : super(key: key);
