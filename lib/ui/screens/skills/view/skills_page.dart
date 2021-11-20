@@ -76,8 +76,11 @@ class _SkillsViewState extends State<SkillsView> {
             header: WaterDropMaterialHeader(),
             controller: _refreshController,
             onRefresh: _onRefresh,
-            child: Container(
-              child: Text('${skills.map((e) => e.toString())}'),
+            child: ListView.builder(
+              itemBuilder: (context, index) => SkillItem(
+                skills[index],
+              ),
+              itemCount: skills.length,
             ),
           );
         },

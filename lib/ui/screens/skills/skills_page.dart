@@ -16,4 +16,5 @@ import 'package:pull_to_refresh/pull_to_refresh.dart';
 part 'bloc/skills_bloc.dart';
 part 'bloc/skills_event.dart';
 part 'bloc/skills_state.dart';
-part 'view/skills.dart';
+part 'view/skills_page.dart';
+part 'view/widgets/skill_item.dart';
