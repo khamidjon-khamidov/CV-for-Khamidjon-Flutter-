@@ -2,6 +2,7 @@ import 'package:cv_for_khamidjon/base/base_api_provider.dart';
 import 'package:cv_for_khamidjon/base/logger.dart';
 import 'package:cv_for_khamidjon/domain/models/server_error_response.dart';
 import 'package:cv_for_khamidjon/domain/models/skills/skill.dart';
+import 'package:cv_for_khamidjon/generated/l10n.dart';
 import 'package:cv_for_khamidjon/utils/constants.dart';
 import 'package:cv_for_khamidjon/utils/server_response.dart';
 import 'package:dio/dio.dart';
