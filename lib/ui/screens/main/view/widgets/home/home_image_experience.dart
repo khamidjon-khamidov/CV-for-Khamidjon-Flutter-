@@ -34,38 +34,42 @@ class _ImageExperience extends StatelessWidget {
             child: Row(
               children: [
                 Spacer(),
-                Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(55.r),
-                  ),
-                  // color: Theme.of(context).scaffoldBackgroundColor,
-                  elevation: 10,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 30.w,
-                      vertical: 12.h,
+                ScaleTap(
+                  onPressed: () {},
+                  opacityMinValue: 1,
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(55.r),
                     ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        _Experience(
-                          path: AppImages.mobileDevelopment,
-                          title: S.current.mobile_development,
-                          paddingHorizontal: 10.w,
-                          paddingVertical: 10.h,
-                        ),
-                        SizedBox(width: 30.w),
-                        _Experience(
-                          path: AppImages.algorithms,
-                          title: S.current.algorithms_cc,
-                        ),
-                        SizedBox(width: 30.w),
-                        _Experience(
-                          path: AppImages.webDevelopment,
-                          title: S.current.web_development,
-                        ),
-                      ],
+                    // color: Theme.of(context).scaffoldBackgroundColor,
+                    elevation: 10,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 30.w,
+                        vertical: 12.h,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          _Experience(
+                            path: AppImages.mobileDevelopment,
+                            title: S.current.mobile_development,
+                            paddingHorizontal: 10.w,
+                            paddingVertical: 10.h,
+                          ),
+                          SizedBox(width: 30.w),
+                          _Experience(
+                            path: AppImages.algorithms,
+                            title: S.current.algorithms_cc,
+                          ),
+                          SizedBox(width: 30.w),
+                          _Experience(
+                            path: AppImages.webDevelopment,
+                            title: S.current.web_development,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),

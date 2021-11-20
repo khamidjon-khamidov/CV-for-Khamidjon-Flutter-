@@ -77,7 +77,8 @@ class _SkillsViewState extends State<SkillsView> {
             controller: _refreshController,
             onRefresh: _onRefresh,
             child: ListView.builder(
-              itemBuilder: (context, index) => SkillItem(
+              padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
+              itemBuilder: (context, index) => _SkillItem(
                 skills[index],
               ),
               itemCount: skills.length,

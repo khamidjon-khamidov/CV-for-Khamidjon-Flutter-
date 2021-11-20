@@ -119,21 +119,18 @@ class _HomeViewState extends State<HomeView> {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
-                  child: InkWell(
-                    onTap: () {},
-                    child: Container(
-                      color: Theme.of(context).splashColor.withAlpha((255 * 0.15).toInt()),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          _TopTitle(),
-                          _ImageExperience(pictureLink: aboutMe.pictureLink),
-                          _SkillDescription(description: aboutMe.description),
-                          SizedBox(height: 18.h),
-                          _ContactItems(),
-                          SizedBox(height: 24.h),
-                        ],
-                      ),
+                  child: Container(
+                    color: Theme.of(context).splashColor.withAlpha((255 * 0.15).toInt()),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        _TopTitle(),
+                        _ImageExperience(pictureLink: aboutMe.pictureLink),
+                        _SkillDescription(description: aboutMe.description),
+                        SizedBox(height: 18.h),
+                        _ContactItems(),
+                        SizedBox(height: 24.h),
+                      ],
                     ),
                   ),
                 ),

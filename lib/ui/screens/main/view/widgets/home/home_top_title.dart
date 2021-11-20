@@ -20,11 +20,15 @@ class _TopTitle extends StatelessWidget {
         ),
         SizedBox(height: 15.h),
         Center(
-          child: Text(
-            S.current.my_name,
-            style: GoogleFonts.aBeeZee().copyWith(
-              fontSize: 24.sp,
-              color: Theme.of(context).colorScheme.secondary,
+          child: ScaleTap(
+            onPressed: () {},
+            scaleMinValue: 0.7,
+            child: Text(
+              S.current.my_name,
+              style: GoogleFonts.aBeeZee().copyWith(
+                fontSize: 24.sp,
+                color: Theme.of(context).colorScheme.secondary,
+              ),
             ),
           ),
         ),

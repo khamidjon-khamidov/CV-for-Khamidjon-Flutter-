@@ -1,5 +1,6 @@
 library skills_page;
 
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:cv_for_khamidjon/domain/models/bloc_response.dart';
@@ -11,6 +12,9 @@ import 'package:cv_for_khamidjon/ui/components/snackbar.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_scale_tap/flutter_scale_tap.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 part 'bloc/skills_bloc.dart';
@@ -18,3 +22,4 @@ part 'bloc/skills_event.dart';
 part 'bloc/skills_state.dart';
 part 'view/skills_page.dart';
 part 'view/widgets/skill_item.dart';
+part 'view/widgets/skill_name.dart';
