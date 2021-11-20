@@ -19,6 +19,8 @@ class SkillsView extends StatefulWidget {
 class _SkillsViewState extends State<SkillsView> {
   RefreshController _refreshController = RefreshController(initialRefresh: false);
 
+  int pressedIndex = -1;
+
   void _onRefresh() async => context.read<SkillsBloc>().add(_GetSkillsEvent());
 
   @override
@@ -78,8 +80,16 @@ class _SkillsViewState extends State<SkillsView> {
             onRefresh: _onRefresh,
             child: ListView.builder(
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
-              itemBuilder: (context, index) => _SkillItem(
-                skills[index],
+              itemBuilder: (context, index) => ScaleTap(
+                onPressed: () {
+                  setState(() {
+                    pressedIndex = index;
+                  });
+                },
+                child: _SkillItem(
+                  skills[index],
+                  isAnimatable: pressedIndex == index,
+                ),
               ),
               itemCount: skills.length,
             ),

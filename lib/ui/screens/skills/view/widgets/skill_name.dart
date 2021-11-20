@@ -2,7 +2,13 @@ part of skills_page;
 
 class _SkillName extends StatelessWidget {
   final String name;
-  _SkillName(this.name, {Key? key}) : super(key: key);
+  final bool isAnimatable;
+
+  _SkillName(
+    this.name,
+    this.isAnimatable, {
+    Key? key,
+  }) : super(key: key);
 
   final List<Color> colorizeColors = [
     Colors.purple,
@@ -18,25 +24,29 @@ class _SkillName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      // width: 240.w,
-      child: AnimatedTextKit(
-        animatedTexts: [
-          ColorizeAnimatedText(
-            name,
-            speed: Duration(milliseconds: 200),
-            textStyle: GoogleFonts.aldrich().copyWith(fontSize: 24.sp),
-            colors: [
-              Theme.of(context).colorScheme.secondary,
-              Theme.of(context).errorColor,
-              Theme.of(context).primaryColorDark,
+    return isAnimatable
+        ? AnimatedTextKit(
+            animatedTexts: [
+              ColorizeAnimatedText(
+                name,
+                speed: Duration(milliseconds: 200),
+                textStyle: GoogleFonts.aldrich().copyWith(fontSize: 24.sp),
+                colors: [
+                  Theme.of(context).colorScheme.secondary,
+                  Theme.of(context).errorColor,
+                  Theme.of(context).primaryColorDark,
+                ],
+              ),
             ],
-          ),
-
-        ],
-        totalRepeatCount: 3,
-      ),
-    );
+            totalRepeatCount: 3,
+          )
+        : Text(
+            name,
+            style: GoogleFonts.aldrich().copyWith(
+              fontSize: 24.sp,
+              color: Theme.of(context).colorScheme.secondary,
+            ),
+          );
   }
 }
 
