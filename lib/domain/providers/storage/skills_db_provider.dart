@@ -14,27 +14,22 @@ class SkillsDbProvider {
       .onSnapshots(_db)
       .map((list) => list.map((skillJson) => Skill.fromJson(skillJson.value)).toList());
 
-  Future putByReplacing(Skill skill) async {
-    await _db.transaction(
-      (txn) async {
-        await _store.delete(txn);
-        await _store.record(skill.id).put(txn, skill.toJson());
-      },
-    );
-  }
+  Future replaceAll(List<Skill> skills) => _db.transaction(
+        (txn) async {
+          await _store.delete(txn);
+          await _store.records(skills.map((e) => e.id)).put(
+                txn,
+                skills.map((e) => e.toJson()).toList(),
+              );
+        },
+      );
 
-  Future<Skill?> read() async {
+  Future<List<Skill>> readAll() async {
     final snapshot = await _store.find(_db);
-    var list = snapshot.map((e) => Skill.fromJson(e.value)).toList();
-
-    if (list.isNotEmpty) {
-      return list.first;
-    }
-
-    return null;
+    return snapshot.map((e) => Skill.fromJson(e.value)).toList();
   }
 
-  Future delete() async => _store.delete(_db);
+  Future deleteAll() async => _store.delete(_db);
 
   Future clear() async => _store.drop(_db);
 }
