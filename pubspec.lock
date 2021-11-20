@@ -490,6 +490,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.1"
+  liquid_progress_indicator:
+    dependency: "direct main"
+    description:
+      name: liquid_progress_indicator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0"
   logger:
     dependency: "direct main"
     description:

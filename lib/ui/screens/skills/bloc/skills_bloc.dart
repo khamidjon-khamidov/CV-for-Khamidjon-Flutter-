@@ -25,5 +25,7 @@ class SkillsBloc extends Bloc<_SkillsEvent, _SkillsState> {
       },
       transformer: droppable(),
     );
+
+    add(_GetSkillsEvent());
   }
 }

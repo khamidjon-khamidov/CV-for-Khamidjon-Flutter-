@@ -22,9 +22,19 @@ class _SkillItem extends StatelessWidget {
         width: width,
         child: Column(
           children: [
-            SizedBox(height: 8.h),
-            _SkillName(skill.name, isAnimatable),
-            SizedBox(height: 8.h),
+            SizedBox(height: 16.h),
+            _SkillName(
+              skill.name,
+              isAnimatable,
+              key: Key('name widget: ${skill.id}:${isAnimatable}'),
+            ),
+            SizedBox(height: 16.h),
+            _SkillPercentage(
+              skill.percentage,
+              isAnimatable,
+              Theme.of(context),
+              key: Key('percentage widget: ${skill.id}:${isAnimatable}'),
+            ),
             SizedBox(height: 20.h),
             SizedBox(height: 80.h),
           ],
