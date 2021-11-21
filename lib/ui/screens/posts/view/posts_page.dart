@@ -79,7 +79,7 @@ class _PostsViewState extends State<PostsView> {
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
               itemBuilder: (context, index) => ScaleTap(
                 onPressed: () {},
-                child: Text('${posts[index].title}'),
+                child: _PostItem(posts[index]),
               ),
               itemCount: posts.length,
             ),
