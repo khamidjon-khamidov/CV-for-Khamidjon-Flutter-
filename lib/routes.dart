@@ -1,7 +1,7 @@
 import 'package:cv_for_khamidjon/ui/screens/achievements/view/achievements.dart';
 import 'package:cv_for_khamidjon/ui/screens/app_details/view/app_details.dart';
 import 'package:cv_for_khamidjon/ui/screens/main/home_pages.dart';
-import 'package:cv_for_khamidjon/ui/screens/posts/view/posts.dart';
+import 'package:cv_for_khamidjon/ui/screens/posts/posts_page.dart';
 import 'package:cv_for_khamidjon/ui/screens/projects/projects.dart';
 import 'package:cv_for_khamidjon/utils/page_transitions.dart';
 import 'package:flutter/material.dart';
