@@ -71,8 +71,8 @@ class _ProjectItem extends StatelessWidget {
             ),
           ),
         ),
-        _ProjectButton(S.current.go_to_app, ''),
-        _ProjectButton(S.current.go_to_source_code, ''),
+        _ProjectButton(S.current.go_to_app, project.link),
+        _ProjectButton(S.current.go_to_source_code, project.gitLink),
         SizedBox(height: 20.h),
       ],
     );
