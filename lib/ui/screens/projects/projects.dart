@@ -15,9 +15,11 @@ import 'package:flutter_scale_tap/flutter_scale_tap.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'bloc/projects_bloc.dart';
 part 'bloc/projects_event.dart';
 part 'bloc/projects_state.dart';
 part 'view/projects_page.dart';
+part 'view/widgets/project_button.dart';
 part 'view/widgets/project_item.dart';

@@ -1,9 +1,9 @@
 part of projects_page;
 
-class ProjectItem extends StatelessWidget {
+class _ProjectItem extends StatelessWidget {
   final Project project;
 
-  ProjectItem(this.project, {Key? key}) : super(key: key);
+  _ProjectItem(this.project, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,6 @@ class ProjectItem extends StatelessWidget {
                 width: 1.0.w,
               ),
             ),
-            borderOnForeground: true,
             child: Container(
               width: width,
               child: Column(
@@ -43,7 +42,10 @@ class ProjectItem extends StatelessWidget {
                     child: Text(
                       project.description,
                       style: TextStyle(
-                        color: Theme.of(context).colorScheme.mediumEmphasisTextDark,
+                        height: 1.3,
+                        wordSpacing: 1.3,
+                        letterSpacing: 0.7,
+                        // color: Theme.of(context).colorScheme.mediumEmphasisTextDark,
                         fontSize: 14.sp,
                       ),
                     ),
@@ -69,6 +71,9 @@ class ProjectItem extends StatelessWidget {
             ),
           ),
         ),
+        _ProjectButton(S.current.go_to_app, ''),
+        _ProjectButton(S.current.go_to_source_code, ''),
+        SizedBox(height: 20.h),
       ],
     );
   }

@@ -86,6 +86,7 @@ class _AboutMeViewState extends State<_AboutMeView> {
             controller: _refreshController,
             onRefresh: _onRefresh,
             child: ListView(
+              physics: BouncingScrollPhysics(),
               children: [
                 Padding(
                   padding: EdgeInsets.only(

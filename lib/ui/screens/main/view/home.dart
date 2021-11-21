@@ -116,6 +116,7 @@ class _HomeViewState extends State<HomeView> {
             controller: _refreshController,
             onRefresh: _onRefresh,
             child: ListView(
+              physics: BouncingScrollPhysics(),
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),

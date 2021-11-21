@@ -29,6 +29,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Connection is lost"),
         "cv_is_being_downloaded":
             MessageLookupByLibrary.simpleMessage("CV is being downloaded"),
+        "cv_link_hasnt_been_loaded_yet": MessageLookupByLibrary.simpleMessage(
+            "CV link hasn\'t been loaded yet"),
         "data_got_from_storage_due_to_network_error":
             MessageLookupByLibrary.simpleMessage(
                 "Data got from storage due to Network Error"),
@@ -53,6 +55,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Flutter Developer"),
         "function_in_development":
             MessageLookupByLibrary.simpleMessage("Function in development"),
+        "go_to_app": MessageLookupByLibrary.simpleMessage("Go to App"),
+        "go_to_source_code":
+            MessageLookupByLibrary.simpleMessage("Go to Source Code"),
         "hiI_am": MessageLookupByLibrary.simpleMessage("Hi, I am"),
         "mobile_development":
             MessageLookupByLibrary.simpleMessage("Mobile\nDevelopment"),
@@ -77,6 +82,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "Please check your wifi or mobile network connection"),
         "some_error": MessageLookupByLibrary.simpleMessage("Some error!"),
+        "sorry_app_not_available_in_store":
+            MessageLookupByLibrary.simpleMessage(
+                "Sorry app not available in store!"),
         "success": MessageLookupByLibrary.simpleMessage("Success"),
         "travel": MessageLookupByLibrary.simpleMessage("Travel"),
         "unexpected_error_occurred":

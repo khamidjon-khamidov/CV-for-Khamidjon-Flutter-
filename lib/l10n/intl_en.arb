@@ -42,5 +42,9 @@
   "travel": "Travel",
   "chess": "Chess",
   "cv_is_being_downloaded": "CV is being downloaded",
-  "unexpected_error_occurred": "Unexpected error occurred"
+  "unexpected_error_occurred": "Unexpected error occurred",
+  "go_to_app": "Go to App",
+  "go_to_source_code": "Go to Source Code",
+  "cv_link_hasnt_been_loaded_yet": "CV link hasn't been loaded yet",
+  "sorry_app_not_available_in_store": "Sorry app not available in store!"
 }

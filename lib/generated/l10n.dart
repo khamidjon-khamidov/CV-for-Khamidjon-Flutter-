@@ -479,6 +479,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Go to App`
+  String get go_to_app {
+    return Intl.message(
+      'Go to App',
+      name: 'go_to_app',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Go to Source Code`
+  String get go_to_source_code {
+    return Intl.message(
+      'Go to Source Code',
+      name: 'go_to_source_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `CV link hasn't been loaded yet`
+  String get cv_link_hasnt_been_loaded_yet {
+    return Intl.message(
+      'CV link hasn\'t been loaded yet',
+      name: 'cv_link_hasnt_been_loaded_yet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sorry app not available in store!`
+  String get sorry_app_not_available_in_store {
+    return Intl.message(
+      'Sorry app not available in store!',
+      name: 'sorry_app_not_available_in_store',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

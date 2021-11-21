@@ -77,8 +77,9 @@ class _ProjectsViewState extends State<ProjectsView> {
             controller: _refreshController,
             onRefresh: _onRefresh,
             child: ListView.builder(
+              physics: BouncingScrollPhysics(),
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
-              itemBuilder: (context, index) => ProjectItem(projects[index]),
+              itemBuilder: (context, index) => _ProjectItem(projects[index]),
               itemCount: projects.length,
             ),
           );

@@ -30,7 +30,7 @@ class HomePagesBloc extends Bloc<_HomePagesEvent, _AboutMeState> {
         if (_cvLink == null) {
           AppSnackBar.showError(
             ScaffoldMessenger.of(event.context),
-            title: "CV link hasn't been loaded yet",
+            title: S.current.cv_link_hasnt_been_loaded_yet,
           );
           return;
         }

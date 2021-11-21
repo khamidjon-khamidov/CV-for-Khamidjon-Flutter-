@@ -79,6 +79,7 @@ class _SkillsViewState extends State<SkillsView> {
             controller: _refreshController,
             onRefresh: _onRefresh,
             child: ListView.builder(
+                physics: BouncingScrollPhysics(),
               padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
               itemBuilder: (context, index) => ScaleTap(
                 onPressed: () {
