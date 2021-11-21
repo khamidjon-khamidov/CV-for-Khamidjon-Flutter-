@@ -7,8 +7,8 @@ import 'package:cv_for_khamidjon/utils/constants.dart';
 import 'package:cv_for_khamidjon/utils/server_response.dart';
 import 'package:dio/dio.dart';
 
-class PostApiProvider extends BaseApiProvider {
-  PostApiProvider(Dio dio) : super(dio);
+class PostsApiProvider extends BaseApiProvider {
+  PostsApiProvider(Dio dio) : super(dio);
 
   Future<ServerResponse<List<Post>, ServerErrorResponse>> getPosts() async {
     simpleLogger.d('Khamidjon: REQUEST: getProjects');
