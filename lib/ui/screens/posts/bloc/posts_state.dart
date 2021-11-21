@@ -14,25 +14,25 @@ class _PostsLoadingState extends _PostsState {
 }
 
 class _PostsLoadedFromStorageState extends _PostsState {
-  final List<Post> skills;
+  final List<Post> posts;
 
   _PostsLoadedFromStorageState(
-    this.skills, {
+    this.posts, {
     String? extraMessage,
   }) : super(extraMessage: extraMessage);
 
   @override
-  List<Object?> get props => [skills, extraMessage];
+  List<Object?> get props => [posts, extraMessage];
 }
 
 class _PostsLoadedFromNetworkState extends _PostsState {
-  final List<Post> skills;
+  final List<Post> posts;
 
-  _PostsLoadedFromNetworkState(this.skills, {String? extraMessage})
+  _PostsLoadedFromNetworkState(this.posts, {String? extraMessage})
       : super(extraMessage: extraMessage);
 
   @override
-  List<Object?> get props => [skills, extraMessage];
+  List<Object?> get props => [posts, extraMessage];
 }
 
 class _PostsErrorState extends _PostsState {
