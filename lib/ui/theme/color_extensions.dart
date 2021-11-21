@@ -11,4 +11,7 @@ extension ColorSchemeExtension on ColorScheme {
   Color get mediumEmphasisTextDark => this.brightness == Brightness.light
       ? AppColors.mediumEmphasisTextDark
       : AppColors.mediumEmphasisTextDark;
+
+  Color get disabledTextDark =>
+      this.brightness == Brightness.light ? AppColors.disabledTextDark : AppColors.disabledTextDark;
 }

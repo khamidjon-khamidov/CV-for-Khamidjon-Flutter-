@@ -22,6 +22,25 @@ class _ProjectsViewState extends State<ProjectsView> {
   void _onRefresh() async => context.read<ProjectsBloc>().add(_GetProjectsEvent());
 
   @override
+  void initState() {
+    context.read<ProjectsBloc>().stream.listen((state) {
+      if (state is _ProjectsErrorState) {
+        AppSnackBar.showError(
+          ScaffoldMessenger.of(context),
+          iconData: Icons.done,
+          title: state.extraMessage,
+        );
+      } else if (state.extraMessage != null) {
+        AppSnackBar.showInfo(
+          ScaffoldMessenger.of(context),
+          title: state.extraMessage!,
+        );
+      }
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -29,6 +48,19 @@ class _ProjectsViewState extends State<ProjectsView> {
       ),
       drawer: AppDrawer(),
       body: BlocBuilder<ProjectsBloc, _ProjectsState>(
+        buildWhen: (prev, current) {
+          if (current is _ProjectsLoadedFromStorageState ||
+              current is _ProjectsLoadedFromNetworkState) {
+            _refreshController.refreshCompleted();
+          } else if (current is _ProjectsErrorState) {
+            _refreshController.refreshFailed();
+            return false;
+          } else if (current is _ProjectsLoadingState) {
+            _refreshController.requestRefresh();
+            return false;
+          }
+          return true;
+        },
         builder: (context, state) {
           List<Project> projects = [];
           if (state is _ProjectsLoadedFromNetworkState) {
@@ -45,9 +77,10 @@ class _ProjectsViewState extends State<ProjectsView> {
             controller: _refreshController,
             onRefresh: _onRefresh,
             child: ListView.builder(
-                padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
-                itemBuilder: (context, index) => Text('${projects[index].title}'),
-                itemCount: projects.length),
+              padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 4.h),
+              itemBuilder: (context, index) => ProjectItem(projects[index]),
+              itemCount: projects.length,
+            ),
           );
         },
       ),
