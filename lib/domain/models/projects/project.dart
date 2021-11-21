@@ -6,7 +6,7 @@ part 'project.g.dart';
 @JsonSerializable(explicitToJson: true)
 class Project implements Equatable {
   @JsonKey(name: 'projectId')
-  final int id;
+  final String id;
   @JsonKey(name: 'projectTime')
   final String time;
   @JsonKey(name: 'projectTitle')

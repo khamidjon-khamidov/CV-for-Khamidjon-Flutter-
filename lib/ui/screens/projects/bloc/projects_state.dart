@@ -26,13 +26,13 @@ class _ProjectsLoadedFromStorageState extends _ProjectsState {
 }
 
 class _ProjectsLoadedFromNetworkState extends _ProjectsState {
-  final List<Project> skills;
+  final List<Project> projects;
 
-  _ProjectsLoadedFromNetworkState(this.skills, {String? extraMessage})
+  _ProjectsLoadedFromNetworkState(this.projects, {String? extraMessage})
       : super(extraMessage: extraMessage);
 
   @override
-  List<Object?> get props => [skills, extraMessage];
+  List<Object?> get props => [projects, extraMessage];
 }
 
 class _ProjectsErrorState extends _ProjectsState {
