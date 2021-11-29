@@ -70,7 +70,7 @@ class Routes {
       );
 
   static Route<void> appDetailsRoute() => PageTransition.slide(
-        const AppDetailsPage(),
+        AppDetailsPage(),
         const RouteSettings(name: _appDetailsPage),
       );
 
