@@ -13,25 +13,43 @@ class _AchievementsPageState extends State<AchievementsPage> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AchievementsBloc, _AchievementsState>(
-      buildWhen: (prev, current) =>
-          current is _AchievementsMenuLoadedState || current is _AchievementsLoadingState,
+      buildWhen: (prev, current) {
+        print('Khamidjon: got state: $current');
+        if (current is _AchievementsLoadedState) {
+          context.read<AchievementsBloc>().add(_GetAchievementGroupEvent(0));
+          return false;
+        }
+        return current is _AchievementsGroupLoadedState || current is _AchievementsLoadingState;
+      },
       builder: (context, state) {
         if (state is _AchievementsLoadingState) {
           return Scaffold(body: Center(child: CircularProgressIndicator()));
         }
 
+        state as _AchievementsGroupLoadedState;
+
         return Scaffold(
           appBar: AppBar(
-            title: Text(S.current.page_achievements),
+            title: Text(state.achievementGroup.title),
           ),
           drawer: AppDrawer(),
-          body: Container(),
+          body: Container(
+            child: Text(state.achievementGroup.title),
+          ),
           bottomNavigationBar: BottomNavigationBar(
-            items: [],
-            currentIndex: _selectedIndex,
+            items: state.menus
+                .map(
+                  (e) => BottomNavigationBarItem(
+                    icon: Icon(Icons.done),
+                    label: e,
+                  ),
+                )
+                .toList(),
+            currentIndex: state.index,
             selectedItemColor: Theme.of(context).colorScheme.secondary,
             onTap: (int index) {
-              // todo
+              print('Khamidjon: tapped bottom: $index');
+              context.read<AchievementsBloc>().add(_GetAchievementGroupEvent(index));
             },
           ),
         );

@@ -27,24 +27,15 @@ class AchievementsBloc extends Bloc<_AchievementsEvent, _AchievementsState> {
       transformer: droppable(),
     );
 
-    on<_GetAchievementsMenuEvent>(
-      (event, emit) async {
-        if (menus.isEmpty) {
-          add(_GetAchievementsEvent());
-          return;
-        }
-
-        emit(_AchievementsMenuLoadedState(menus));
-      },
-      transformer: droppable(),
-    );
-
     on<_GetAchievementGroupEvent>(
       (event, emit) async {
+        print('Khamidjon: loaded state: ${event.index}');
+        emit(_AchievementsGroupLoadingState(index: event.index));
         emit(
           _AchievementsGroupLoadedState(
             index: event.index,
             achievementGroup: achievementGroups[event.index],
+            menus: menus,
           ),
         );
       },
