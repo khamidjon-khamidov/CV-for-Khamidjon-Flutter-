@@ -12,16 +12,16 @@ class _GetAchievementsInitialEvent extends _AchievementsEvent {
   List<Object?> get props => throw UnimplementedError();
 }
 
-class _GetAchievementGroup extends _AchievementsEvent {
+class _GetAchievementGroupEvent extends _AchievementsEvent {
   final int index;
 
-  _GetAchievementGroup(this.index);
+  _GetAchievementGroupEvent(this.index);
 
   @override
   List<Object?> get props => [index];
 }
 
-class _GetAchievementsMenu extends _AchievementsEvent {
+class _GetAchievementsMenuEvent extends _AchievementsEvent {
   @override
   List<Object?> get props => [];
 }

@@ -9,8 +9,20 @@ abstract class _AchievementsState extends Equatable {
   List<Object?> get props => [extraMessage];
 }
 
+class _AchievementsLoadingState extends _AchievementsState {
+  _AchievementsLoadingState({String? extraMessage}) : super(extraMessage: extraMessage);
+}
+
+class _AchievementsLoadedState extends _AchievementsState {
+  _AchievementsLoadedState({String? extraMessage}) : super(extraMessage: extraMessage);
+}
+
 class _AchievementsMenuLoadingState extends _AchievementsState {
   _AchievementsMenuLoadingState({String? extraMessage}) : super(extraMessage: extraMessage);
+}
+
+class _AchievementsErrorState extends _AchievementsState {
+  _AchievementsErrorState(String extraMessage) : super(extraMessage: extraMessage);
 }
 
 class _AchievementsMenuLoadedState extends _AchievementsState {
