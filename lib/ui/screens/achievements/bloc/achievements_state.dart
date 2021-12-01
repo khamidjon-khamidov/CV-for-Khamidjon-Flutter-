@@ -1,5 +1,4 @@
-import 'package:cv_for_khamidjon/domain/models/achievements/achievement_group.dart';
-import 'package:equatable/equatable.dart';
+part of achievements_page;
 
 abstract class _AchievementsState extends Equatable {
   final String? extraMessage;

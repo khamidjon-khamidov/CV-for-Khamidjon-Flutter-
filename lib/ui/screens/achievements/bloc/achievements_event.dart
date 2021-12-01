@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of achievements_page;
 
 abstract class _AchievementsEvent extends Equatable {}
 

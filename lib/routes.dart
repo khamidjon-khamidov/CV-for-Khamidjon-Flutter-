@@ -1,4 +1,4 @@
-import 'package:cv_for_khamidjon/ui/screens/achievements/view/achievements.dart';
+import 'package:cv_for_khamidjon/ui/screens/achievements/achievements_page.dart';
 import 'package:cv_for_khamidjon/ui/screens/app_details/view/app_details.dart';
 import 'package:cv_for_khamidjon/ui/screens/main/home_pages.dart';
 import 'package:cv_for_khamidjon/ui/screens/posts/posts_page.dart';
