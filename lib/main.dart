@@ -3,10 +3,12 @@ import 'dart:async';
 import 'package:cv_for_khamidjon/base/database.dart';
 import 'package:cv_for_khamidjon/base/dio_builder.dart';
 import 'package:cv_for_khamidjon/domain/providers/storage/preferences_provider.dart';
+import 'package:cv_for_khamidjon/domain/repositories/achievements_repository.dart';
 import 'package:cv_for_khamidjon/domain/repositories/main_repository.dart';
 import 'package:cv_for_khamidjon/domain/repositories/posts_repository.dart';
 import 'package:cv_for_khamidjon/domain/repositories/projects_repository.dart';
 import 'package:cv_for_khamidjon/domain/repositories/skills_repository.dart';
+import 'package:cv_for_khamidjon/ui/screens/achievements/achievements_page.dart';
 import 'package:cv_for_khamidjon/ui/screens/main/home_pages.dart';
 import 'package:cv_for_khamidjon/ui/screens/posts/posts_page.dart';
 import 'package:cv_for_khamidjon/ui/screens/projects/projects.dart';
@@ -66,6 +68,12 @@ void mainCommon() async {
               database: appDatabase,
             ),
           ),
+          RepositoryProvider<AchievementsRepository>(
+            create: (context) => AchievementsRepository(
+              dio: DioBuilder.dio,
+              database: appDatabase,
+            ),
+          ),
         ],
         child: MultiBlocProvider(
           providers: [
@@ -83,6 +91,9 @@ void mainCommon() async {
             ),
             BlocProvider<PostsBloc>(
               create: (context) => PostsBloc(context.read<PostsRepository>()),
+            ),
+            BlocProvider<AchievementsBloc>(
+              create: (context) => AchievementsBloc(context.read<AchievementsRepository>()),
             ),
           ],
           child: App(),
