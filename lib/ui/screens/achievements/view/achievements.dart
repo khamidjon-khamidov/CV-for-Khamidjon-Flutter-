@@ -82,19 +82,31 @@ class _AchievementsPageState extends State<AchievementsPage> {
                       children: [
                         CachedNetworkImage(
                           imageUrl: state.achievementGroup.achievements[i].imageLink,
-                          // imageBuilder: (context, imageProvider) => Container(
-                          //   width: width,
-                          //   height: 600,
-                          //   decoration: BoxDecoration(
-                          //     borderRadius: BorderRadius.circular(12.r),
-                          //     shape: BoxShape.rectangle,
-                          //     image: DecorationImage(
-                          //       image: imageProvider,
-                          //       fit: BoxFit.cover,
-                          //     ),
-                          //   ),
-                          // ),
-                        )
+                        ),
+                        Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).primaryColor,
+                            border: Border.symmetric(
+                              horizontal: BorderSide(
+                                color: Theme.of(context).colorScheme.secondary,
+                                width: 1.5.h,
+                              ),
+                            ),
+                          ),
+                          child: Column(
+                            children: [
+                              SizedBox(height: 8.h),
+                              Text(state.achievementGroup.achievements[i].title),
+                              SizedBox(height: 2.h),
+                              Text(
+                                state.achievementGroup.achievements[i].description,
+                                style: TextStyle(color: Theme.of(context).colorScheme.secondary),
+                              ),
+                              SizedBox(height: 8.h),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
