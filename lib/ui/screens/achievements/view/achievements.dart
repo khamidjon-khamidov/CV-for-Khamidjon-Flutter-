@@ -47,7 +47,7 @@ class _AchievementsPageState extends State<AchievementsPage> {
                 .toList(),
             currentIndex: state.index,
             unselectedItemColor: Theme.of(context).colorScheme.disabledTextDark,
-            selectedItemColor: Theme.oaf(context).colorScheme.secondary,
+            selectedItemColor: Theme.of(context).colorScheme.secondary,
             onTap: (int index) {
               print('Khamidjon: tapped bottom: $index');
               context.read<AchievementsBloc>().add(_GetAchievementGroupEvent(index));
