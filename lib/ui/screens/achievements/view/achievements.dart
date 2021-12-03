@@ -42,7 +42,22 @@ class _AchievementsPageState extends State<AchievementsPage> {
           context.read<AchievementsBloc>().add(_GetAchievementGroupEvent(0));
           return false;
         }
-        return current is _AchievementsGroupLoadedState || current is _AchievementsLoadingState;
+
+        if (current is _AchievementsErrorState) {
+          _refreshController.refreshFailed();
+          false;
+        }
+
+        if (current is _AchievementsGroupLoadedState) {
+          _refreshController.refreshCompleted();
+          return true;
+        }
+
+        if (current is _AchievementsLoadingState) {
+          _refreshController.requestRefresh();
+          return false;
+        }
+        return false;
       },
       builder: (context, state) {
         if (state is _AchievementsLoadingState) {
