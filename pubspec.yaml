@@ -25,7 +25,6 @@ dependencies:
   pull_to_refresh: ^2.0.0
   google_fonts: ^2.1.0
 
-
   #animation
   animated_text_kit: ^4.2.1
   animated_widgets: ^1.1.0
